@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <title>{% block title %}about{% endblock%}</title>
+  </head>
+
+  <body>
+    <header class="header">
+      <ul class="ul-menu-item">
+        <li class="li-menu-item"><a href="home">Главная</a></li>
+        <li class="li-menu-item"><a href="partners">Партнеры</a></li>
+        <li class="li-menu-item"><a href="about">О нас!</a></li>
+        <li class="li-menu-item"><a href="#">Задать вопрос</a></li>
+      </ul>
+    </header>
+    
+
+
+
+    {% block body %}{% endblock%}
+    <div class="main-js">
+      <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    </div>
+  </body>
+
+</html>
