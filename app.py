@@ -20,7 +20,7 @@ def about():
     # Функция для отображения страницы о нас 
     return render_template('main/about.html')   
 
-# Декоратор для установки маршрута '/about' для вызова функции about
+# Декоратор для установки маршрута '/partners'' для вызова функции partners
 @app.route('/partners')
 def partners():  
     # Функция для отображения страницы о нас 
