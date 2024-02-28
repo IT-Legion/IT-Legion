@@ -1,4 +1,8 @@
-### Hi there 👋
+### Привет мир! 
+## Это проект
+#  IT Legion
+
+
 
 <!--
 **IT-Legion/IT-Legion** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
