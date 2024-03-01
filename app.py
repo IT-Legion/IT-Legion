@@ -38,6 +38,15 @@ def informatics_main():
 
 
 
+# Декоратор для установки маршрута '/partners'' для вызова функции partners
+@app.route('/1')
+def main():  
+    # Функция для отображения страницы о нас 
+    return render_template('/1.html') 
+
+
+
+
 
 
 
