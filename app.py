@@ -29,13 +29,17 @@ def partners():
     return render_template('main/partners.html') 
 
 
-# Декоратор для установки маршрута '/partners'' для вызова функции partners
+
 @app.route('/informatics')
-def informatics_main():  
+def informatics_main():
+
+    return render_template('/content/informatics/informatics.html')
+
+# Декоратор для установки маршрута '/partners'' для вызова функции partners
+@app.route('/information_concept')
+def information_concept():  
     # Функция для отображения страницы о нас 
-    return render_template('/content/informatics/informatics.html') 
-
-
+    return render_template('/content/informatics/information_concept.html') 
 
 
 # Декоратор для установки маршрута '/partners'' для вызова функции partners
@@ -43,7 +47,6 @@ def informatics_main():
 def main():  
     # Функция для отображения страницы о нас 
     return render_template('/1.html') 
-
 
 
 
