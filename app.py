@@ -29,28 +29,33 @@ def partners():
     return render_template('main/partners.html') 
 
 
-
+# Декоратор для установки маршрута '/information_concept'' для вызова функции partners
 @app.route('/informatics')
 def informatics_main():
-
+    # Функция для отображения страницы
     return render_template('/content/informatics/informatics.html')
 
-# Декоратор для установки маршрута '/partners'' для вызова функции partners
+
+# Декоратор для установки маршрута '/information_concept'' для вызова функции partners
 @app.route('/information_concept')
 def information_concept():  
     # Функция для отображения страницы о нас 
     return render_template('/content/informatics/information_concept.html') 
 
 
-# Декоратор для установки маршрута '/partners'' для вызова функции partners
+# Декоратор для установки маршрута '/дз диана'' для вызова функции 
 @app.route('/1')
-def main():  
+def diana():  
     # Функция для отображения страницы о нас 
     return render_template('/1.html') 
 
 
 
-
+# Декоратор для установки маршрута '/дз рома'' для вызова функции 
+@app.route('/2')
+def roma():  
+    # Функция для отображения страницы о нас 
+    return render_template('/1.html') 
 
 
 
