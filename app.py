@@ -57,6 +57,11 @@ def roma():
     # Функция для отображения страницы о нас 
     return render_template('/1.html') 
 
+@app.route('/3')
+def stepan():
+
+    return render_template('/stepan.html')
+
 
 
 # Условие для проверки, запущен ли этот скрипт напрямую
