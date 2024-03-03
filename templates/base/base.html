@@ -1,30 +1,34 @@
-<!DOCTYPE html>
-<html lang="ru">
+<!DOCTYPE html> <!-- Объявление типа документа -->
+<html lang="ru"> <!-- Начало тега HTML с указанием языка страницы -->
 
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
-    <title>{% block title %}{% endblock%}</title>
-  </head>
+<head> <!-- Начало секции заголовка страницы -->
+  <meta charset="UTF-8"> <!-- Установка кодировки символов -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Метаданные для адаптивного отображения на разных устройствах -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+  <!-- Подключение внешнего CSS файла -->
+  <title>{% block title %}{% endblock%}</title> <!-- Заголовок страницы, подверженный изменению через наследование -->
 
-  <body>
-    <header class="header">
-      <ul class="ul-menu-item">
-        <li class="li-menu-item"><a href="home">Главная</a></li>
-        <li class="li-menu-item"><a href="partners">Партнеры</a></li>
-        <li class="li-menu-item"><a href="about">О нас!</a></li>
-        <li class="li-menu-item"><a href="#">Задать вопрос</a></li>
-      </ul>
-    </header>
-    
+</head> <!-- Завершение секции заголовка страницы -->
 
+<body> <!-- Начало тега body, содержащего основное содержимое страницы -->
+  <header class="header"> <!-- Начало секции заголовка страницы -->
+    <ul class="ul-menu-item"> <!-- Начало списка меню -->
+      <li class="li-menu-item"><a href="home">Главная</a></li> <!-- Элемент списка с ссылкой на Главную страницу -->
+      <li class="li-menu-item"><a href="partners">Партнеры</a></li>
+      <!-- Элемент списка с ссылкой на страницу Партнеров -->
+      <li class="li-menu-item"><a href="about">О нас!</a></li> <!-- Элемент списка с ссылкой на страницу О нас -->
+      <li class="li-menu-item"><a href="#">Задать вопрос</a></li>
+      <!-- Элемент списка с ссылкой на форму для задания вопроса -->
+    </ul> <!-- Завершение списка меню -->
+  </header> <!-- Завершение секции заголовка страницы -->
 
+  {% block body %}{% endblock%} <!-- Основное содержимое страницы, подверженное изменению через наследование -->
 
-    {% block body %}{% endblock%}
-    <div class="main-js">
-      <script src="{{ url_for('static', filename='js/main.js') }}"></script>
-    </div>
-  </body>
+  <div class="main-js"> <!-- Блок скриптов -->
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <!-- Подключение внешнего JavaScript файла -->
+  </div> <!-- Завершение блока скриптов -->
+</body> <!-- Завершение тега body -->
 
-</html>
+</html> <!-- Завершение тега HTML -->
