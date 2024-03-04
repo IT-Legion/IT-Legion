@@ -63,6 +63,36 @@ def stepan():
     return render_template('/stepan.html')
 
 
+@app.route('/4')
+def maksim():
+
+    return render_template('/maksim.html')
+
+@app.route('/5')
+def nikita():
+
+    return render_template('/nikita.html')
+
+@app.route('/6')
+def polina():
+
+    return render_template('/polina.html')
+
+@app.route('/7')
+def sofa():
+
+    return render_template('/sofa.html')
+
+@app.route('/8')
+def vlad():
+
+    return render_template('/vlad.html')
+
+
+
+
+
+
 
 # Условие для проверки, запущен ли этот скрипт напрямую
 if __name__ == '__main__':  
