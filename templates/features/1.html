@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Интересный метод</title>
+<style>
+.half {
+  position: relative;
+  display: inline-block;
+  font-size: 24px;
+  overflow: hidden;
+}
+
+.half::before {
+  content: attr(data-content);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  background-color: lightblue;
+  transition: width 0.3s ease-in-out;
+}
+
+.half:hover::before {
+  width: 100%;
+}
+</style>
+</head>
+<body>
+<p>Наведи курсор на текст, чтобы увидеть эффект "половинного деления".</p>
+<p class="half" data-content="Интересный метод">Интересный метод</p>
+</body>
+</html>

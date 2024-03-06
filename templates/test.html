@@ -1,65 +1,49 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Докажи что ты не бездарь</title>
+  <title>Робот-пылесос</title>
   <style>
-    .popup {
+    .robot-container {
+      width: 300px;
+      height: 300px;
+      background-color: #f2f2f2;
+      position: relative;
+    }
+    .robot {
+      width: 100px;
+      height: 100px;
+      background-color: #00ff00;
       position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background: lightblue;
-      padding: 20px;
-      border: 2px solid blue;
+      bottom: 0;
+      animation: moveRobot 3s linear infinite;
+    }
+
+    @keyframes moveRobot {
+      0% {
+        left: 0;
+      }
+      25% {
+        top: 200px;
+      }
+      50% {
+        left: 200px;
+      }
+      75% {
+        top: 0;
+      }
+      100% {
+        left: 0;
+      }
     }
   </style>
 </head>
 <body>
 
-<div id="popup" class="popup" style="display: none;">
-  <p>Ты бездарность</p>
-  <button onclick="agree()">Да</button>
-  <button id="noButton" onclick="disagree()">Нет</button>
+<h1>Робот-пылесос</h1>
+
+<div class="robot-container">
+  <div class="robot"></div>
 </div>
-
-<script>
-  var noButtonClicks = 0;
-  var popupElement = document.getElementById('popup');
-
-  function agree() {
-    alert("Я с тобой согласен");
-    popupElement.style.display = 'none';
-  }
-
-  function disagree() {
-    noButtonClicks++;
-
-    if (noButtonClicks === 5) {
-      alert("Да согласись ты уже");
-    }
-
-    if (noButtonClicks === 10) {
-      document.getElementById('noButton').innerText = 'Да';
-    }
-
-    if (noButtonClicks === 11) {
-      alert("Я знал что ты согласишься");
-      popupElement.style.position = 'static';
-      return;
-    }
-
-    var maxX = window.innerWidth - popupElement.offsetWidth;
-    var maxY = window.innerHeight - popupElement.offsetHeight;
-
-    var randomX = Math.floor(Math.random() * maxX);
-    var randomY = Math.floor(Math.random() * maxY);
-
-    popupElement.style.left = randomX + 'px';
-    popupElement.style.top = randomY + 'px';
-  }
-
-  popupElement.style.display = 'block';
-</script>
 
 </body>
 </html>

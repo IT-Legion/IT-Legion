@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Изменение текста на кнопке</title>
+<style>
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+</style>
+</head>
+<body>
+<button onclick="changeText()">Нажми на меня!</button>
+
+<script>
+function changeText() {
+    var button = document.querySelector("button");
+    var texts = ["Поменяй меня!", "Я изменился!", "Нажми еще раз!"];
+    var randomIndex = Math.floor(Math.random() * texts.length);
+    button.textContent = texts[randomIndex];
+}
+</script>
+</body>
+</html>
