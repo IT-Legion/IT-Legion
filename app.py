@@ -55,38 +55,38 @@ def diana():
 @app.route('/2')
 def roma():  
     # Функция для отображения страницы о нас 
-    return render_template('/1.html') 
+    return render_template('/homework/1.html') 
 
 @app.route('/3')
 def stepan():
 
-    return render_template('/stepan.html')
+    return render_template('/homework/stepan.html')
 
 
 @app.route('/4')
 def maksim():
 
-    return render_template('/maksim.html')
+    return render_template('/homework/maksim.html')
 
 @app.route('/5')
 def nikita():
 
-    return render_template('/nikita.html')
+    return render_template('/homework/nikita.html')
 
 @app.route('/6')
 def polina():
 
-    return render_template('/polina.html')
+    return render_template('/homework/polina.html')
 
 @app.route('/7')
 def sofa():
 
-    return render_template('/sofa.html')
+    return render_template('/homework/sofa.html')
 
 @app.route('/8')
 def vlad():
 
-    return render_template('/vlad.html')
+    return render_template('/homework/vlad.html')
 
 
 
