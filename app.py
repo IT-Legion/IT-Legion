@@ -89,6 +89,11 @@ def vlad():
     return render_template('/homework/vlad.html')
 
 
+@app.route('/test')
+def test():
+
+    return render_template('/test.html')
+
 
 
 
