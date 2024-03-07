@@ -1,12 +1,21 @@
 /*<<---Стили для: Базовых тегов--->> */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 h1 {
-    text-align: center; /* Центрируем текст */
+    text-align: center;
+    /* Центрируем текст */
 }
 
 body {
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Чтобы контейнер страницы занимал всю высоту окна браузера */
+    min-height: 100vh;
+    /* Чтобы контейнер страницы занимал всю высоту окна браузера */
 }
 
 
@@ -15,10 +24,10 @@ body {
 
 
 /*<<---Стили для: базовой шапки--->> */
-.header{
+.header {
     background-color: #333;
     padding: 20px;
-    color: #fff;
+    color: #d10d0d;
     text-align: center;
 
 
@@ -39,22 +48,155 @@ body {
 }
 
 /* Стили для списка сылок в базовой шапке */
-.li-menu-item{
-    display: inline-flex;/* Устанавливаем элементы списка в строчном направлении*/ 
-    list-style-type:none ; /* Стиль маркера списка - отсутствие */
-    padding-right: 10px; /* Отступ справа для элементов списка */
+.li-menu-item {
+    display: inline-flex;
+    /* Устанавливаем элементы списка в строчном направлении*/
+    list-style-type: none;
+    /* Стиль маркера списка - отсутствие */
+    padding-right: 10px;
+    /* Отступ справа для элементов списка */
 }
 
 /* Стили для ссылок в базовой шапке*/
-.li-menu-item a{
-    text-decoration: none; /* Убираем подчеркивание ссылок */
-    color: white; /* Цвет ссылок */
+.li-menu-item a {
+    position: relative;
+    display: inline-block;
+    padding: 25px 30px;
+    margin: 40px 0;
+    color: #03e9f4;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.5s;
+    letter-spacing: 4px;
+    overflow: hidden;
+    margin-right: 50px;
+    /* Добавление правого отступа */
 }
 
 /* Стили для ссылок при наведении курсора */
 .li-menu-item a:hover {
-    color: blue; /* Изменяем цвет ссылок при наведении */
-  }
+    background:
+        #03e9f4;
+    color: #050801;
+    box-shadow: 0 0 5px #03e9f4,
+        0 0 25px #03e9f4,
+        0 0 50px #03e9f4,
+        0 0 200px #03e9f4;
+    -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+    /* Добавление отражения */
+
+}
+
+/* Стилизация первой ссылки */
+a:nth-child(1) {
+    filter: hue-rotate(270deg);
+    /* Поворот оттенка цвета */
+}
+
+/* Стилизация второй ссылки */
+a:nth-child(2) {
+    filter: hue-rotate(110deg);
+    /* Поворот оттенка цвета */
+}
+
+/* Стилизация спанов внутри ссылок */
+a span {
+    position: absolute;
+    display: block;
+}
+
+/* Стилизация первого спана */
+a span:nth-child(1) {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #03e9f4);
+    animation: animate1 1s linear infinite;
+    /* Анимация */
+}
+
+/* Анимация для первого спана */
+@keyframes animate1 {
+    0% {
+        left: -100%;
+    }
+
+    50%,
+    100% {
+        left: 100%;
+    }
+}
+
+/* Стилизация второго спана */
+a span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, #03e9f4);
+    animation: animate2 1s linear infinite;
+    animation-delay: 0.25s;
+}
+
+/* Анимация для второго спана */
+@keyframes animate2 {
+    0% {
+        top: -100%;
+    }
+
+    50%,
+    100% {
+        top: 100%;
+    }
+}
+
+/* Стилизация третьего спана */
+a span:nth-child(3) {
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent, #03e9f4);
+    animation: animate3 1s linear infinite;
+    animation-delay: 0.50s;
+}
+
+/* Анимация для третьего спана */
+@keyframes animate3 {
+    0% {
+        right: -100%;
+    }
+
+    50%,
+    100% {
+        right: 100%;
+    }
+}
+
+/* Стилизация четвертого спана */
+a span:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, #03e9f4);
+    animation: animate4 1s linear infinite;
+    animation-delay: 0.75s;
+}
+
+/* Анимация для четвертого спана */
+@keyframes animate4 {
+    0% {
+        bottom: -100%;
+    }
+
+    50%,
+    100% {
+        bottom: 100%;
+    }
+}
+
 
 /*>>---Стили для: базовой шапки---<<*/
 
@@ -62,34 +204,48 @@ body {
 
 
 /*<<---Стили для: Выбор  --->> */
-.home-main-choice{
-    margin-top: 50px;/*Отступ от верха*/
+.home-main-choice {
+    margin-top: 50px;
+    /*Отступ от верха*/
 
-    height: 250px; /* Задаём высоту 250 пикселей */
+    height: 250px;
+    /* Задаём высоту 250 пикселей */
     /*Эти стили применяют границу к элементу*/
-    border-width: 2px  ;/* Ширина границы 2 пикселя */
-    border-style: solid;/* Стиль границы - сплошная линия */
-    border-color: green;/* Цвет границы - зелёный */
+    border-width: 2px;
+    /* Ширина границы 2 пикселя */
+    border-style: solid;
+    /* Стиль границы - сплошная линия */
+    border-color: green;
+    /* Цвет границы - зелёный */
 }
 
 .home-main-choice ul {
-    height: 90%; /* Высота каждого элемента списка на 90% от родительского контейнера */
-   
-    
-    list-style-type: none; /* Убираем маркеры у списка */
+    height: 90%;
+    /* Высота каждого элемента списка на 90% от родительского контейнера */
+
+
+    list-style-type: none;
+    /* Убираем маркеры у списка */
 }
 
-.home-main-choice ul li{
-    display: inline-flex;/* Устанавливаем элементы списка в строчном направлении*/ 
-    padding-right: 10px; /* Отступ справа для элементов списка */
-    text-align: center; /* Центрируем текст внутри элемента списка */
-    border: 1px solid black; /* Пример границы для наглядности */
-    width: 30%; /* Ширина каждого элемента списка на всю доступную ширину */
-    height: 90%; /* Высота каждого элемента списка на 90% от родительского контейнера */
+.home-main-choice ul li {
+    display: inline-flex;
+    /* Устанавливаем элементы списка в строчном направлении*/
+    padding-right: 10px;
+    /* Отступ справа для элементов списка */
+    text-align: center;
+    /* Центрируем текст внутри элемента списка */
+    border: 1px solid black;
+    /* Пример границы для наглядности */
+    width: 30%;
+    /* Ширина каждого элемента списка на всю доступную ширину */
+    height: 90%;
+    /* Высота каждого элемента списка на 90% от родительского контейнера */
 }
 
-.home-main-choice ul li a{
-    text-align: center; /* Центрируем текст внутри элемента списка */
+.home-main-choice ul li a {
+    text-align: center;
+    /* Центрируем текст внутри элемента списка */
 
 }
 
@@ -98,13 +254,20 @@ body {
 
 /*<<---Стили для: --->> footer */
 footer {
-    width: 100%; /* Ширина 100% */
-    background-color: #333;/* Фоновый цвет */
-    padding: 20px; /* Внутренний отступ */
-    color: #fff; /* Цвет текста */
-    text-align: center; /* Выравнивание текста по центру */
-    position: fixed; /* Позиционирование фиксированно */
-    bottom: 0; /* Расположение внизу */
+    width: 100%;
+    /* Ширина 100% */
+    background-color: #333;
+    /* Фоновый цвет */
+    padding: 20px;
+    /* Внутренний отступ */
+    color: #fff;
+    /* Цвет текста */
+    text-align: center;
+    /* Выравнивание текста по центру */
+    position: fixed;
+    /* Позиционирование фиксированно */
+    bottom: 0;
+    /* Расположение внизу */
 
 
     /*
