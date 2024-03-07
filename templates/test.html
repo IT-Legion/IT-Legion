@@ -1,49 +1,74 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Робот-пылесос</title>
-  <style>
-    .robot-container {
-      width: 300px;
-      height: 300px;
-      background-color: #f2f2f2;
-      position: relative;
-    }
-    .robot {
-      width: 100px;
-      height: 100px;
-      background-color: #00ff00;
-      position: absolute;
-      bottom: 0;
-      animation: moveRobot 3s linear infinite;
-    }
+<!DOCTYPE html> <!-- Объявление типа документа -->
+<html lang="ru"> <!-- Начало тега HTML с указанием языка страницы -->
 
-    @keyframes moveRobot {
-      0% {
-        left: 0;
-      }
-      25% {
-        top: 200px;
-      }
-      50% {
-        left: 200px;
-      }
-      75% {
-        top: 0;
-      }
-      100% {
-        left: 0;
-      }
-    }
-  </style>
-</head>
-<body>
 
-<h1>Робот-пылесос</h1>
+<head> <!-- Начало секции заголовка страницы -->
 
-<div class="robot-container">
-  <div class="robot"></div>
-</div>
+    <meta charset="UTF-8"> <!-- Установка кодировки символов -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Метаданные для адаптивного отображения на разных устройствах -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <!-- Подключение внешнего CSS файла -->
+    <title>{% block title %}{% endblock%}</title> <!-- Заголовок страницы, подверженный изменению через наследование -->
 
-</body>
-</html>
+</head> <!-- Завершение секции заголовка страницы -->
+
+<body> <!-- Начало тега body, содержащего основное содержимое страницы -->
+    <header class="header"> <!-- Начало секции заголовка страницы -->
+        <ul class="ul-menu-item"> <!-- Начало списка меню -->
+            <li class="li-menu-item">
+                <a href="home">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    Главная
+                </a>
+            </li> <!-- Элемент списка с ссылкой на Главную страницу -->
+            <li class="li-menu-item">
+                <a href="partners">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    Партнеры
+                </a>
+            </li>
+            <!-- Элемент списка с ссылкой на страницу Партнеров -->
+            <li class="li-menu-item">
+                <a href="about">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    О нас!
+                </a>
+            </li> <!-- Элемент списка с ссылкой на страницу О нас -->
+            <li class="li-menu-item">
+                <a href="#">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    Задать вопрос
+                </a>
+            </li>
+            <!-- Элемент списка с ссылкой на форму для задания вопроса -->
+        </ul> <!-- Завершение списка меню -->
+    </header> <!-- Завершение секции заголовка страницы -->
+
+    <!-- Основное содержимое страницы, подверженное изменению через наследование начало -->
+    {% block body %}{% endblock%}
+    <!-- Основное содержимое страницы, подверженное изменению через наследование конец -->
+
+
+    <div class="main-js"> <!-- Блок скриптов -->
+        <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+        <!-- Подключение внешнего JavaScript файла -->
+    </div> <!-- Завершение блока скриптов -->
+
+    <footer> <!-- Начало футера -->
+        &copy;IT-Legion <!-- &copy; используется для вставки символа копирайта © -->
+    </footer> <!-- Конец футера -->
+</body> <!-- Завершение тега body -->
+</html> <!-- Завершение тега HTML -->
