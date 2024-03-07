@@ -63,7 +63,7 @@ def stepan():
     return render_template('/homework/stepan.html')
 
 
-@app.route('/4')
+@app.route('/maksim')
 def maksim():
 
     return render_template('/homework/maksim.html')
