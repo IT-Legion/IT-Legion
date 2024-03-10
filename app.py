@@ -43,7 +43,7 @@ def information_concept():
     return render_template('/content/informatics/information_concept.html') 
 
 
-@app.route('/10')
+@app.route('/lesson-1')
 def lesson_py_1():  
     # Функция для отображения страницы о нас 
     return render_template('/content/python/lesson_1.html') 
