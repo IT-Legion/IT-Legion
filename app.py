@@ -43,11 +43,21 @@ def information_concept():
     return render_template('/content/informatics/information_concept.html') 
 
 
+@app.route('/10')
+def lesson_py_1():  
+    # Функция для отображения страницы о нас 
+    return render_template('/content/python/lesson_1.html') 
+
+
+
+
+
+
 # Декоратор для установки маршрута '/дз диана' для вызова функции 
 @app.route('/1')
 def diana():  
     # Функция для отображения страницы о нас 
-    return render_template('/1.html') 
+    return render_template('/homework/1.html') 
 
 
 
