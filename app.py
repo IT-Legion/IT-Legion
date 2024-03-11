@@ -1,6 +1,6 @@
 # Импорт класса Flask из библиотеки Flask и функции render_template для рендеринга HTML-шаблонов
-from flask import Flask, render_template  
-
+# Импорт функции url_for для создания URL-адресов
+from flask import Flask, render_template, url_for  
 
 # Создание экземпляра веб-приложения Flask с указанием текущего модуля в качестве имени
 app = Flask(__name__)
@@ -43,10 +43,10 @@ def information_concept():
     return render_template('/content/informatics/information_concept.html') 
 
 
-@app.route('/lesson/<lesson>')
-def lesson_py(lesson):  
-    # Функция для отображения страницы о нас 
-    return render_template(f'/content/python/lesson_{lesson}.html') 
+@app.route('/lesson/<int:id>')
+def lesson_py(id):  
+    # Функция для отображения страниц lesson
+    return render_template(f'/content/python/lesson_{id}.html') 
 
 
 
