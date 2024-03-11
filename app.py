@@ -6,7 +6,7 @@ from flask_sqlalchemy import SQLAlchemy
 # Создание экземпляра веб-приложения Flask с указанием текущего модуля в качестве имени
 app = Flask(__name__)
 
-app.config['']
+#app.config['']
 
 
 
@@ -48,12 +48,23 @@ def information_concept():
 
 
 # Обратите внимание! На адресную строку и путь до файла Добро пожаловать, дорогие гости!
-# <--В Welcome шаблон:->>
+#Старт: В Welcome шаблон:->>
 @app.route('/guest_room')
 def guest_room():
     
     return render_template('/python/main_in_python.html')
-# -->В Welcome шаблон:<<--
+#<--В Welcome шаблон:<<--
+@app.route('/space_room')
+def guest_space():
+
+    return "https://sonik.space/"
+#-->В Welcome шаблон:->>#end:
+#
+#       Шаблон!
+#-->В Welcome шаблон:-->
+#
+# <--В Welcome шаблон:<<--
+
 
 
 
