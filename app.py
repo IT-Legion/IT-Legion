@@ -43,10 +43,10 @@ def information_concept():
     return render_template('/content/informatics/information_concept.html') 
 
 
-@app.route('/lesson-1')
-def lesson_py_1():  
+@app.route('/lesson/<lesson>')
+def lesson_py(lesson):  
     # Функция для отображения страницы о нас 
-    return render_template('/content/python/lesson_1.html') 
+    return render_template(f'/content/python/lesson_{lesson}.html') 
 
 
 
@@ -97,6 +97,12 @@ def sofa():
 def vlad():
 
     return render_template('/homework/vlad.html')
+
+
+@app.route('/9')
+def vova():
+
+    return render_template('/homework/vova.html')
 
 
 @app.route('/test')
