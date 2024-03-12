@@ -49,10 +49,12 @@ def information_concept():
 
 # Обратите внимание! На адресную строку и путь до файла Добро пожаловать, дорогие гости!
 #Старт: В Welcome шаблон:->>
-@app.route('/guest_room')
+
+@app.route('/guest_room_python')
 def guest_room():
     
-    return render_template('/python/main_in_python.html')
+    return render_template('content/python/main_in_python.html')
+
 #<--В Welcome шаблон:<<--
 @app.route('/space_room')
 def guest_space():
