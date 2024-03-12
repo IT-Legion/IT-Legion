@@ -59,7 +59,7 @@ def guest_room():
 @app.route('/space_room')
 def guest_space():
 
-    return "<a href='https://sonik.space/'>sonik</a"
+    return "<a href='https://sonik.space/'>sonik</a>  <a href='https://www.google.com/earth/studio/'>earth/studio/</a>"   
 #-->В Welcome шаблон:->>#end:
 #
 #       Шаблон!
