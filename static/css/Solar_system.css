@@ -1,7 +1,7 @@
 // ---------------------
 // Colors
 // ---------------------
-$color-transparent: rgba(0,0,0,0);
+$color-transparent: rgba(0, 0, 0, 0);
 $color-black: #000;
 $color-white: #fff;
 
@@ -15,6 +15,7 @@ $color-secondary: #d500d5;
 // ---------------------
 @mixin stars($nb, $color) {
   $shadows: #{random(1000) * 0.1vw} #{random(1000) * 0.1vh} $color;
+
   @for $i from 2 through $nb {
     $shadows: #{$shadows}, #{random(1000) * 0.1vw} #{random(1000) * 0.1vh} $color;
   }
@@ -30,25 +31,25 @@ body {
   overflow: hidden;
   color: $color-white;
   background: radial-gradient(circle at 60% 15%, rgba($color-primary, .3), $color-transparent 65%),
-              radial-gradient(circle at 40% 85%, rgba($color-secondary, .3), $color-transparent 65%),
-              radial-gradient(circle at 50% 50%, $color-bg-color, $color-black);
+    radial-gradient(circle at 40% 85%, rgba($color-secondary, .3), $color-transparent 65%),
+    radial-gradient(circle at 50% 50%, $color-bg-color, $color-black);
 }
 
 .Stars {
   @include stars(300, #fff);
-  
+
   &::before,
   &::after {
     content: '';
     position: absolute;
     inset: 0;
   }
-  
+
   &::before {
     @include stars(400, #ccc);
     animation: lighting 3s linear reverse infinite;
   }
-  
+
   &::after {
     @include stars(500, #aaa);
     animation: lighting 3s linear infinite;
@@ -59,9 +60,9 @@ body {
   border-color: $color-primary;
   font-size: clamp(1.2rem, 5vw, 1.7rem);
   transition: .5s;
-  
+
   &:hover {
-    background-color: rgba($color-white, 0.1  );
+    background-color: rgba($color-white, 0.1);
   }
 }
 
@@ -73,7 +74,7 @@ body {
 .Planet_infoContainer {
   width: calc(100% - 2rem);
   max-width: 24rem;
-  
+
   &::before {
     content: '';
     position: absolute;
@@ -86,7 +87,7 @@ body {
     opacity: 0;
     transition: 1s;
   }
-  
+
   &::after {
     content: '';
     position: absolute;
@@ -102,27 +103,29 @@ body {
   }
 }
 
-.Container button:focus + .Planet .Planet_visual {
+.Container button:focus+.Planet .Planet_visual {
   transform: translate(-50%, -50%) scale(1);
 }
 
-.Container button:focus + .Planet .Planet_infoContainer::before {
+.Container button:focus+.Planet .Planet_infoContainer::before {
   opacity: 1;
 }
 
-.Container button:focus + .Planet .Planet_infoContainer::after {
+.Container button:focus+.Planet .Planet_infoContainer::after {
   opacity: 1;
   width: 28%;
   height: 65px;
 }
 
-.Container:has(button:focus) > .Container_info,
-.Container:focus-within > .Container_info { // For Firefox suport (Thanks @pavlovsk)
+.Container:has(button:focus)>.Container_info,
+.Container:focus-within>.Container_info {
+  // For Firefox suport (Thanks @pavlovsk)
   animation: pulse 1s linear infinite;
 }
 
-.Container:has(button:focus) > button,
-.Container:focus-within > button { // For Firefox suport (Thanks @pavlovsk)
+.Container:has(button:focus)>button,
+.Container:focus-within>button {
+  // For Firefox suport (Thanks @pavlovsk)
   opacity: 0;
   pointer-events: none;
 }
@@ -139,7 +142,7 @@ body {
     radial-gradient(circle at 45% 45%, #959286 59%, #59574f 60%);
 }
 
-.Container button:focus + .Planet__mercury .Planet_info {
+.Container button:focus+.Planet__mercury .Planet_info {
   // typed is a scss lib. You can find it here : https://github.com/brandonmcconnell/typed.css
   @include typed("Mercury is the first planet from the Sun and the smallest planet in the Solar System.", (type: .05), (iterations: 0));
 }
@@ -152,14 +155,14 @@ body {
     radial-gradient(circle at 45% 45%, #e9be7d 59%, #a38352 60%);
 }
 
-.Container button:focus + .Planet__venus .Planet_info {
+.Container button:focus+.Planet__venus .Planet_info {
   @include typed("Venus is the second planet from the Sun. It is a rocky planet and the only Solar System object with a size and mass close to that of Earth.", (type: .05), (iterations: 0));
 }
 
 
 // Earth
 .Planet__earth .Planet_visual {
-  background: radial-gradient(circle at 45% 45%, $color-transparent 59%, rgba(0,0,0,0.5) 60%),
+  background: radial-gradient(circle at 45% 45%, $color-transparent 59%, rgba(0, 0, 0, 0.5) 60%),
     radial-gradient(circle at 30% 60%, #ccc 19%, $color-transparent 20%),
     radial-gradient(circle at 45% 55%, #ccc 14%, $color-transparent 15%),
     radial-gradient(circle at 20% 65%, #ccc 14%, $color-transparent 15%),
@@ -169,52 +172,52 @@ body {
     radial-gradient(circle at 90% 55%, #5a9323 19%, #638dc3 20%);
 }
 
-.Container button:focus + .Planet__earth .Planet_info {
+.Container button:focus+.Planet__earth .Planet_info {
   @include typed("Earth is the third planet from the Sun and the only place known in the universe where life has originated and found habitability.", (type: .05), (iterations: 0));
 }
 
 
 //Mars
 .Planet__mars .Planet_visual {
-  background: radial-gradient(circle at 45% 45%, $color-transparent 59%, rgba(0,0,0,0.5) 60%),
+  background: radial-gradient(circle at 45% 45%, $color-transparent 59%, rgba(0, 0, 0, 0.5) 60%),
     radial-gradient(circle at 60% 50%, #b88262 5%, $color-transparent 6%),
     radial-gradient(circle at 25% 25%, #b88262 6%, $color-transparent 7%),
     radial-gradient(circle at 45% 65%, #b88262 9%, #9e583b 10%);
 }
 
-.Container button:focus + .Planet__mars .Planet_info {
+.Container button:focus+.Planet__mars .Planet_info {
   @include typed('Mars is the fourth planet and the furthest terrestrial planet from the Sun. The reddish color of its surface is due to finely grained iron oxide dust in the soil, giving it the nickname "the Red Planet".', (type: .05), (iterations: 0));
 }
 
 
 // Jupiter
 .Planet__jupiter .Planet_visual {
-  background: radial-gradient(circle at 45% 45%, $color-transparent 59%, rgba(0,0,0,0.5) 60%),
+  background: radial-gradient(circle at 45% 45%, $color-transparent 59%, rgba(0, 0, 0, 0.5) 60%),
     radial-gradient(ellipse at 75% 57%, #9c564c 4%, #b97457 5%, #b97457 6%, #e8e8e8 7%, $color-transparent 10%),
     linear-gradient(to bottom, #83756b 5%, #5d5650, #83756b 24%, #a9a288 25%, #bfc5bb, #a9a288 28%, #68564a 30%, #b0c9dd 31%, #d9ebf8, #b0c9dd 35%, #b89577 36%, #a66956, #b89577 39%, #c2d1ee 40%, #c2d1ee 42%, #939b9e, #c2d1ee 46%, #c2d1ee 50%, #bf9b7b 51%, #ffe3d8, #715c44, #bf9b7b 58%, #eaeae8 59%, #cedef5, #eaeae8 64%, #5d5650 65%, #5d5650 68%, #544a41 70%, #5d5650 72%, #82746b 73%, #5d5650 74%, #5d5650 80%, #5c4a43 85%, #473a31 100%);
 }
 
-.Container button:focus + .Planet__jupiter .Planet_info {
+.Container button:focus+.Planet__jupiter .Planet_info {
   @include typed("Jupiter is the fifth planet from the Sun and the largest in the Solar System. She is the third brightest natural object in the Earth's night sky after the Moon and Venus, and it has been observed since prehistoric times.", (type: .05), (iterations: 0));
 }
 
 
 // Saturn
-.Container button:focus + .Planet__saturn .Planet_visual {
-    transform: translate(-50%, -50%) rotate(35deg) scale(1);
-  }
+.Container button:focus+.Planet__saturn .Planet_visual {
+  transform: translate(-50%, -50%) rotate(35deg) scale(1);
+}
 
 .Planet__saturn .Planet_visual {
   transform: translate(-50%, -50%) rotate(35deg) scale(0);
-  
-  & > div {
+
+  &>div {
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    background: radial-gradient(circle at 45% 45%, $color-transparent 59%, rgba(0,0,0,0.5) 60%),
-    linear-gradient(to bottom, #a59571, #b8a27d 3%, #a2876a 5%, #b8a27d 6%, #a2876a 7%, #b8a27d 15%, #a2876a 16%, #b8a27d 17%, #a2876a 18%, #a2876a 20%, #bf9a7d 21%, #cbad95, #bf9a7d 34%, #a98a6e 35%, #a98a6e 36%, #bf9a7d 37%, #bf9a7d 40%, #fbcca0 41%, #fbcca0 42%, #d5b086 43%, #e9c092 53%, #e4caaf 54%, #e9c092 55%, #d5b086 59%, #9c8964 66%, #927465 70%, #b6977a 71%, #b6977a 72%, #927465 73%, #927465 80%, #cba580 81%, #cba580 84%, #b39072 85%); 
+    background: radial-gradient(circle at 45% 45%, $color-transparent 59%, rgba(0, 0, 0, 0.5) 60%),
+      linear-gradient(to bottom, #a59571, #b8a27d 3%, #a2876a 5%, #b8a27d 6%, #a2876a 7%, #b8a27d 15%, #a2876a 16%, #b8a27d 17%, #a2876a 18%, #a2876a 20%, #bf9a7d 21%, #cbad95, #bf9a7d 34%, #a98a6e 35%, #a98a6e 36%, #bf9a7d 37%, #bf9a7d 40%, #fbcca0 41%, #fbcca0 42%, #d5b086 43%, #e9c092 53%, #e4caaf 54%, #e9c092 55%, #d5b086 59%, #9c8964 66%, #927465 70%, #b6977a 71%, #b6977a 72%, #927465 73%, #927465 80%, #cba580 81%, #cba580 84%, #b39072 85%);
   }
-  
+
   &::before,
   &::after {
     content: '';
@@ -224,23 +227,23 @@ body {
     width: 250%;
     height: 25%;
     transform: translateX(-50%);
-    background: radial-gradient(ellipse at top, $color-transparent 40%, #605448 41%, rgba(#605448, 0.8) 43%, $color-transparent 44%, rgba(#605448, 0.5) 45%, rgba(#605448, 0.5) 47%, #605448 48%, #605448 49%, $color-transparent 50%, #605448, $color-transparent 53%, $color-transparent 54%, #d5af8a 55%, #d5af8a 56%, #7c634f 57%, #7c634f 58%, #9c7d63 59% , #9c7d63 60%, #caa47f 61%, $color-transparent 64%, #aa9384 65%, $color-transparent 71%, $color-transparent);
+    background: radial-gradient(ellipse at top, $color-transparent 40%, #605448 41%, rgba(#605448, 0.8) 43%, $color-transparent 44%, rgba(#605448, 0.5) 45%, rgba(#605448, 0.5) 47%, #605448 48%, #605448 49%, $color-transparent 50%, #605448, $color-transparent 53%, $color-transparent 54%, #d5af8a 55%, #d5af8a 56%, #7c634f 57%, #7c634f 58%, #9c7d63 59%, #9c7d63 60%, #caa47f 61%, $color-transparent 64%, #aa9384 65%, $color-transparent 71%, $color-transparent);
   }
-  
+
   &::before {
     z-index: -1;
     transform: translate(-50%, -99.5%) rotate(180deg);
   }
 }
 
-.Container button:focus + .Planet__saturn .Planet_info {
+.Container button:focus+.Planet__saturn .Planet_info {
   @include typed("Saturn is the sixth planet from the Sun and the second-largest in the Solar System, after Jupiter. It is a gas giant with an average radius of about nine and a half times that of Earth.", (type: .05), (iterations: 0));
 }
 
 
 // Uranus
 .Planet__uranus .Planet_visual {
-  background: radial-gradient(circle at 45% 45%, $color-transparent 59%, rgba(0,0,0,0.5) 60%),
+  background: radial-gradient(circle at 45% 45%, $color-transparent 59%, rgba(0, 0, 0, 0.5) 60%),
     radial-gradient(ellipse 25% 30% at 58% 40%, rgba(#fff, 0.3), rgba(#fff, 0.3), 90%, $color-transparent 91%),
     radial-gradient(ellipse 40% 45% at 65% 45%, rgba(#fff, 0.3), rgba(#fff, 0.3), 90%, $color-transparent 91%),
     radial-gradient(ellipse 10% 20% at 10% 50%, rgba(#fff, 0.3), rgba(#fff, 0.3), 90%, $color-transparent 91%),
@@ -248,20 +251,20 @@ body {
     radial-gradient(ellipse 100% 300% at 0% 50%, #80adaa 40%, #6794a9 41%, #719792 54%, #a1d1ce 55%, #a1d1ce 60%, #6895aa 61%, #6895aa 70%, #56828d);
 }
 
-.Container button:focus + .Planet__uranus .Planet_info {
+.Container button:focus+.Planet__uranus .Planet_info {
   @include typed("Uranus is the seventh planet from the Sun and is a gaseous cyan ice giant. Most of Uranus is made out of water, ammonia, and methane in a supercritical phase of matter, which in astronomy is called 'ice' or volatiles.", (type: .05), (iterations: 0));
 }
 
 
 // Neptune
 .Planet__neptune .Planet_visual {
-  background: radial-gradient(circle at 45% 45%, $color-transparent 59%, rgba(0,0,0,0.5) 60%),
+  background: radial-gradient(circle at 45% 45%, $color-transparent 59%, rgba(0, 0, 0, 0.5) 60%),
     radial-gradient(ellipse 20% 30% at 28% 60%, rgba(#fff, 0.1), rgba(#fff, 0.1), 90%, $color-transparent 91%),
     radial-gradient(ellipse 35% 40% at 35% 55%, rgba(#fff, 0.1), rgba(#fff, 0.1), 90%, $color-transparent 91%),
     radial-gradient(ellipse 200% 100% at 60% 100%, #356581 10%, #3a6c8f 11%, #3a6c8f 25%, #4174a9 26%, #4174a9 80%, #4a88bb 81%, #4a88bb 88%, #5097c9 89%, #5097c9 91%, #32597d 92%);
 }
 
-.Container button:focus + .Planet__neptune .Planet_info {
+.Container button:focus+.Planet__neptune .Planet_info {
   @include typed("Neptune is the eighth planet from the Sun and the farthest known planet in the Solar System. It is the fourth-largest planet in the Solar System by diameter, the third-most-massive planet, and the densest giant planet.", (type: .05), (iterations: 0));
 }
 
@@ -271,12 +274,31 @@ body {
 // ----------------------
 
 @keyframes lighting {
-  0%, 100% { opacity: 1; }
-  20% { opacity: 0.6; }
-  30% { opacity: 0.9; }
-  50% { opacity: 0.7; }
-  70% { opacity: 1; }
-  90% { opacity: 0.5; }
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  20% {
+    opacity: 0.6;
+  }
+
+  30% {
+    opacity: 0.9;
+  }
+
+  50% {
+    opacity: 0.7;
+  }
+
+  70% {
+    opacity: 1;
+  }
+
+  90% {
+    opacity: 0.5;
+  }
 }
 
 
@@ -292,4 +314,4 @@ body {
   transform: translateX(-50%);
   font-weight: 700;
   opacity: .5;
-} 
+}
