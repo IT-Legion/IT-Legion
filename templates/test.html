@@ -1,74 +1,17 @@
-<!DOCTYPE html> <!-- Объявление типа документа -->
-<html lang="ru"> <!-- Начало тега HTML с указанием языка страницы -->
-
-
-<head> <!-- Начало секции заголовка страницы -->
-
-    <meta charset="UTF-8"> <!-- Установка кодировки символов -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Метаданные для адаптивного отображения на разных устройствах -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/Neon_button.css') }}">
-    <!-- Подключение внешнего CSS файла -->
-    <title>{% block title %}{% endblock%}</title> <!-- Заголовок страницы, подверженный изменению через наследование -->
-
-</head> <!-- Завершение секции заголовка страницы -->
-
-<body> <!-- Начало тега body, содержащего основное содержимое страницы -->
-    <header class="header"> <!-- Начало секции заголовка страницы -->
-        <ul class="ul-menu-item"> <!-- Начало списка меню -->
-            <li class="li-menu-item">
-                <a href="home">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    Главная
-                </a>
-            </li> <!-- Элемент списка с ссылкой на Главную страницу -->
-            <li class="li-menu-item">
-                <a href="partners">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    Партнеры
-                </a>
-            </li>
-            <!-- Элемент списка с ссылкой на страницу Партнеров -->
-            <li class="li-menu-item">
-                <a href="about">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    О нас!
-                </a>
-            </li> <!-- Элемент списка с ссылкой на страницу О нас -->
-            <li class="li-menu-item">
-                <a href="#">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    Задать вопрос
-                </a>
-            </li>
-            <!-- Элемент списка с ссылкой на форму для задания вопроса -->
-        </ul> <!-- Завершение списка меню -->
-    </header> <!-- Завершение секции заголовка страницы -->
-
-    <!-- Основное содержимое страницы, подверженное изменению через наследование начало -->
-    {% block body %}{% endblock%}
-    <!-- Основное содержимое страницы, подверженное изменению через наследование конец -->
-
-
-    <div class="main-js"> <!-- Блок скриптов -->
-        <script src="{{ url_for('static', filename='js/main.js') }}"></script>
-        <!-- Подключение внешнего JavaScript файла -->
-    </div> <!-- Завершение блока скриптов -->
-
-    <footer> <!-- Начало футера -->
-        &copy;IT-Legion <!-- &copy; используется для вставки символа копирайта © -->
-    </footer> <!-- Конец футера -->
-</body> <!-- Завершение тега body -->
-</html> <!-- Завершение тега HTML -->
+    <title>test</title>
+</head>
+<body>
+    <div id="popup" class="popup" style="display: none;">
+        <p>Ты любишь кильку в томатном соусе от бренда "Русская рыба" из магазина магнит возле каменной 9 рядом со школо номер 4 в которой учусь я?
+        </p>
+        <button onclick="agree()">Да</button>
+        <button id="noButton" onclick="disagree()">Нет</button>
+      </div>
+    <script src="{{ url_for('static', filename='js/test.js') }}"></script>
+</body>
+</html>
