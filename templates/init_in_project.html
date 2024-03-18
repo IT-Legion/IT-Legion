@@ -1,0 +1,90 @@
+{% extends 'base/base.html' %}
+
+{% block title %}
+инициализация
+{% endblock%}
+
+{% block individual_style %}
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.gallery figure {
+    flex: 0 0 30%;
+    /* 30% ширины для каждого элемента */
+    margin-bottom: 20px;
+    /* Добавьте немного отступа снизу для воздуха между рядами */
+}
+
+.gallery img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    /* Центрируем изображения */
+}
+{% endblock%}
+
+
+
+
+{% block body %}
+<h1>Запуск проекта</h1>
+<h2> FLASK</h2>
+<p>Для того,чтобы запустить проект его нужно изночально скачать.</p>
+<p>Так как исходный код принято хронить на системах контроля версии git</p>
+<p>мы воспользуемся ресурсом github.Ниже представлена ссылка на проект.</p>
+<div>
+    <p><a href="https://github.com/IT-Legion/IT-Legion.git">-ссылка-</a></p>
+</div>
+<p>Выше представлен пример для копирования ссылки на репозиторий.</p>
+<p>как вы поняли её надо скопировать и вставить в специальное поле в <b>VS-code</b></p>
+
+<div class="gallery">
+    <figure>
+        <figcaption>Шаг-1й </figcaption>
+        <img width="400" height="400" src="static/images/github_1.png" alt="Пример-1">
+    </figure>
+    <figure>
+        <figcaption>Шаг-2 </figcaption>
+        <img width="400" height="400" src="static/images/github_2.png" alt="Пример-2">
+    </figure>4
+
+    <figure>
+        <figcaption>Шаг-3 </figcaption>
+        <img width="400" height="400" src="static/images/github_3.png" alt="Пример-3">
+    </figure>
+    <figure>
+        <figcaption>Шаг-4 </figcaption>
+        <img width="400" height="400" src="static/images/github_4.png" alt="Пример-4">
+    </figure>
+    <figure>
+        <figcaption>Шаг-5 </figcaption>
+        <img width="400" height="400" src="static/images/github_5.png" alt="Пример-5">
+    </figure>
+    <figure>
+        <figcaption>Шаг-6 </figcaption>
+        <img width="400" height="400" src="static/images/github_6.png" alt="Пример-6">
+    </figure>
+    <figure>
+        <figcaption>Шаг-7 </figcaption>
+        <img width="400" height="400" src="static/images/github_7.png" alt="Пример-7">
+    </figure>
+    <figure>
+        <figcaption>Шаг-8 </figcaption>
+        <img width="400" height="400" src="static/images/github_8.png" alt="Пример-8">
+    </figure>
+
+
+    <figure>
+        <figcaption>Шаг-9 </figcaption>
+        <img width="400" height="400" src="static/images/github_9.png" alt="Пример-9">
+    </figure>
+    <figure>
+        <figcaption>Шаг-10 </figcaption>
+        <img width="400" height="400" src="static/images/github_10.png" alt="Пример-10">
+    </figure>
+</div>
+{% endblock%}

@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}"><!--Это служит за подключение дизайна сайта-->
   <!-- Подключение внешнего CSS файла -->
   <title>{% block title %}{% endblock%}</title> <!-- Заголовок страницы, подверженный изменению через наследование -->
-
+  <style>{% block individual_style %}{% endblock%}</style>
 </head> <!-- Завершение секции заголовка страницы -->
 
 <body> <!-- Начало тега body, содержащего основное содержимое страницы -->
