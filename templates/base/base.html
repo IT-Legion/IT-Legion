@@ -7,7 +7,7 @@
   <meta charset="UTF-8"> <!-- Установка кодировки символов -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Метаданные для адаптивного отображения на разных устройствах -->
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}"><!--Это служит за подключение дизайна сайта-->
   <!-- Подключение внешнего CSS файла -->
   <title>{% block title %}{% endblock%}</title> <!-- Заголовок страницы, подверженный изменению через наследование -->
   <style>{% block style %}{% endblock%}</style>
