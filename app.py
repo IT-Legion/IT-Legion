@@ -121,18 +121,19 @@ def sofa():
 
     return render_template('/homework/sofa.html')
 
-@app.route('/8')
-def vlad():
+@app.route('/cst')
+def computer_science_test():
 
-    return render_template('/homework/vlad.html')
+    return render_template('/content/informatics/cst.html')
 
 
+# Декоратор для установки маршрута Инициализация в проекте
 @app.route('/init_in_project')
 def init_in_project():
     # Функция для отображения страницы
     return render_template('/init_in_project.html')
 
-# Декоратор для установки маршрута Инициализация в проекте
+
 @app.route('/test')
 def test():
     # Функция для отображения страницы
