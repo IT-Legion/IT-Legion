@@ -136,7 +136,7 @@ def vova():
 @app.route('/test')
 def test():
 
-    return render_template('init_in_project')
+    return render_template('/init_in_project.html')
 
 
 

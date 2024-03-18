@@ -4,50 +4,30 @@
 инициализация
 {% endblock%}
 
-{% block style %}
+{% block individual_style %}
 .gallery {
-display: flex;
-flex-wrap: wrap;
-justify-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .gallery figure {
-flex: 0 0 30%; /* 30% ширины для каждого элемента */
-margin-bottom: 20px; /* Добавьте немного отступа снизу для воздуха между рядами */
+    flex: 0 0 30%;
+    /* 30% ширины для каждого элемента */
+    margin-bottom: 20px;
+    /* Добавьте немного отступа снизу для воздуха между рядами */
 }
 
 .gallery img {
-max-width: 100%;
-height: auto;
-display: block;
-margin: 0 auto; /* Центрируем изображения */
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    /* Центрируем изображения */
 }
-
 {% endblock%}
 
 
-<style>
-    .gallery {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-    }
-
-    .gallery figure {
-        flex: 0 0 30%;
-        /* 30% ширины для каждого элемента */
-        margin-bottom: 20px;
-        /* Добавьте немного отступа снизу для воздуха между рядами */
-    }
-
-    .gallery img {
-        max-width: 100%;
-        height: auto;
-        display: block;
-        margin: 0 auto;
-        /* Центрируем изображения */
-    }
-</style>
 
 
 {% block body %}
