@@ -56,7 +56,7 @@ def guest_room():
     return render_template('content/python/main_in_python.html')
 
 #<--В Welcome шаблон:<<--
-@app.route('/space_room')
+@app.route('/guest_room_space')
 def guest_space():
 
     return "<a href='https://sonik.space/'>sonik</a>  <a href='https://www.google.com/earth/studio/'>earth/studio/</a>"   
