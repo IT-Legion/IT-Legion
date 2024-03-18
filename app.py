@@ -1,7 +1,7 @@
 # Импорт класса Flask из библиотеки Flask и функции render_template для рендеринга HTML-шаблонов
 # Импорт функции url_for для создания URL-адресов
 from flask import Flask, render_template, url_for 
-from flask_sqlalchemy import SQLAlchemy
+#from flask_sqlalchemy import SQLAlchemy
 
 # Создание экземпляра веб-приложения Flask с указанием текущего модуля в качестве имени
 app = Flask(__name__)
@@ -136,7 +136,7 @@ def vova():
 @app.route('/test')
 def test():
 
-    return render_template('init_project.html')
+    return render_template('/danay_olhev.html')
 
 
 
