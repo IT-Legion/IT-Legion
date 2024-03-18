@@ -127,15 +127,15 @@ def vlad():
     return render_template('/homework/vlad.html')
 
 
-@app.route('/9')
-def vova():
+@app.route('/init_in_project')
+def init_in_project():
+    # Функция для отображения страницы
+    return render_template('/init_in_project.html')
 
-    return render_template('/homework/vova.html')
-
-
+# Декоратор для установки маршрута Инициализация в проекте
 @app.route('/test')
 def test():
-
+    # Функция для отображения страницы
     return render_template('/init_in_project.html')
 
 
