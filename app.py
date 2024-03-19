@@ -1,7 +1,7 @@
 # Импорт класса Flask из библиотеки Flask и функции render_template для рендеринга HTML-шаблонов
 # Импорт функции url_for для создания URL-адресов
 from flask import Flask, render_template, url_for 
-from flask_sqlalchemy import SQLAlchemy
+#from flask_sqlalchemy import SQLAlchemy
 
 # Создание экземпляра веб-приложения Flask с указанием текущего модуля в качестве имени
 app = Flask(__name__)
@@ -56,7 +56,7 @@ def guest_room():
     return render_template('content/python/main_in_python.html')
 
 #<--В Welcome шаблон:<<--
-@app.route('/space_room')
+@app.route('/guest_room_space')
 def guest_space():
 
     return "<a href='https://sonik.space/'>sonik</a>  <a href='https://www.google.com/earth/studio/'>earth/studio/</a>"   
@@ -121,22 +121,23 @@ def sofa():
 
     return render_template('/homework/sofa.html')
 
-@app.route('/8')
-def vlad():
+@app.route('/cst')
+def computer_science_test():
 
-    return render_template('/homework/vlad.html')
+    return render_template('/content/informatics/cst.html')
 
 
-@app.route('/9')
-def vova():
-
-    return render_template('/homework/vova.html')
+# Декоратор для установки маршрута Инициализация в проекте
+@app.route('/init_in_project')
+def init_in_project():
+    # Функция для отображения страницы
+    return render_template('/init_in_project.html')
 
 
 @app.route('/test')
 def test():
-
-    return render_template('/init_project.html')
+    # Функция для отображения страницы
+    return render_template('/init_in_project.html')
 
 
 
