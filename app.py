@@ -131,7 +131,7 @@ def computer_science_test():
 @app.route('/init_in_project')
 def init_in_project():
     # Функция для отображения страницы
-    return render_template('/init_in_project.html')
+    return render_template('/content/git/init_in_project.html')
 
 
 @app.route('/test')
