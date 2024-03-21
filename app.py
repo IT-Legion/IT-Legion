@@ -59,7 +59,7 @@ def computer_science_test():
 @app.route('/guest_room_python')
 def guest_room():
     
-    return render_template('content/python_room/main_in_python.html')
+    return render_template('/content/python_room/main_in_python.html')
 
 #<--В Welcome шаблон:<<--
 @app.route('/guest_room_space')
