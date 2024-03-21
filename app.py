@@ -36,14 +36,20 @@ def partners():
 @app.route('/informatics')
 def informatics_main():
     # Функция для отображения страницы
-    return render_template('/content/informatics/informatics.html')
+    return render_template('/content/informatics_room/informatics.html')
 
 
 # Декоратор для установки маршрута '/information_concept' для вызова функции partners
 @app.route('/information_concept')
 def information_concept():  
     # Функция для отображения страницы о нас 
-    return render_template('/content/informatics/information_concept.html') 
+    return render_template('/content/informatics_room/information_concept.html') 
+
+@app.route('/cst')
+def computer_science_test():
+
+    return render_template('/content/informatics_room/cst.html')
+
 
 
 
@@ -121,10 +127,6 @@ def sofa():
 
     return render_template('/homework/sofa.html')
 
-@app.route('/cst')
-def computer_science_test():
-
-    return render_template('/content/informatics/cst.html')
 
 
 # Декоратор для установки маршрута Инициализация в проекте
