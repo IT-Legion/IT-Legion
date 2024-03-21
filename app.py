@@ -110,7 +110,7 @@ def stepan():
 @app.route('/maksim')
 def maksim():
 
-    return render_template('/homework/maksim.html')
+    return render_template('/homework/limarenko/maksim.html')
 
 @app.route('/5')
 def nikita():
