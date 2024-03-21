@@ -50,9 +50,6 @@ def computer_science_test():
 
     return render_template('/content/informatics_room/cst.html')
 
-
-
-
 # Обратите внимание! На адресную строку и путь до файла Добро пожаловать, дорогие гости!
 #Старт: В Welcome шаблон:->>
 
