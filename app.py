@@ -36,16 +36,19 @@ def partners():
 @app.route('/informatics')
 def informatics_main():
     # Функция для отображения страницы
-    return render_template('/content/informatics/informatics.html')
+    return render_template('/content/informatics_room/informatics.html')
 
 
 # Декоратор для установки маршрута '/information_concept' для вызова функции partners
 @app.route('/information_concept')
 def information_concept():  
     # Функция для отображения страницы о нас 
-    return render_template('/content/informatics/information_concept.html') 
+    return render_template('/content/informatics_room/information_concept.html') 
 
+@app.route('/cst')
+def computer_science_test():
 
+    return render_template('/content/informatics_room/cst.html')
 
 # Обратите внимание! На адресную строку и путь до файла Добро пожаловать, дорогие гости!
 #Старт: В Welcome шаблон:->>
@@ -53,13 +56,13 @@ def information_concept():
 @app.route('/guest_room_python')
 def guest_room():
     
-    return render_template('content/python/main_in_python.html')
+    return render_template('/content/python_room/main_in_python.html')
 
 #<--В Welcome шаблон:<<--
 @app.route('/guest_room_space')
 def guest_space():
 
-    return "<a href='https://sonik.space/'>sonik</a>  <a href='https://www.google.com/earth/studio/'>earth/studio/</a>"   
+    return "<a href='https://sonik.space/'>sonik</a>  <a href=''></a>  <a href='https://www.google.com/earth/studio/'>earth/studio/</a> https://introsat.ru/"   
 #-->В Welcome шаблон:->>#end:
 #
 #       Шаблон!
@@ -74,7 +77,7 @@ def guest_space():
 @app.route('/lesson/<int:id>')
 def lesson_py(id):  
     # Функция для отображения страниц lesson
-    return render_template(f'/content/python/lesson_{id}.html') 
+    return render_template(f'content/python_room/lesson_{id}.html') 
 
 
 
@@ -104,7 +107,7 @@ def stepan():
 @app.route('/maksim')
 def maksim():
 
-    return render_template('/homework/maksim.html')
+    return render_template('/homework/limarenko/maksim.html')
 
 @app.route('/5')
 def nikita():
@@ -121,17 +124,13 @@ def sofa():
 
     return render_template('/homework/sofa.html')
 
-@app.route('/cst')
-def computer_science_test():
-
-    return render_template('/content/informatics/cst.html')
 
 
 # Декоратор для установки маршрута Инициализация в проекте
 @app.route('/init_in_project')
 def init_in_project():
     # Функция для отображения страницы
-    return render_template('/init_in_project.html')
+    return render_template('content/git_room/init_in_project.html')
 
 
 @app.route('/test')
