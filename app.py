@@ -50,6 +50,11 @@ def computer_science_test():
 
     return render_template('/content/informatics_room/cst.html')
 
+@app.route('/cst2')
+def computer_science_tickets():
+
+    return render_template('/content/informatics_room/cst2.html')
+
 # Обратите внимание! На адресную строку и путь до файла Добро пожаловать, дорогие гости!
 #Старт: В Welcome шаблон:->>
 
@@ -88,7 +93,7 @@ def lesson_py(id):
 @app.route('/1')
 def diana():  
     # Функция для отображения страницы о нас 
-    return render_template('/homework/1.html') 
+    return render_template('content/informatics_room/cst2.html') 
 
 
 
