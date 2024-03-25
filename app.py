@@ -125,9 +125,9 @@ def polina():
     return render_template('/homework/polina.html')
 
 @app.route('/7')
-def sofa():
+def lecture_1():
 
-    return render_template('/homework/sofa.html')
+    return render_template('/content/hackers_room/lectures/lecture_1.html')
 
 
 
