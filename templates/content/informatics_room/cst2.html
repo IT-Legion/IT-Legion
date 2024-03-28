@@ -5,25 +5,36 @@ Tickets for computer science
 {% endblock%}
 
 
-{% block individual_style %} 
+{% block individual_style %}
 <style>
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+    }
 
- div{ margin-bottom: 2em;}
 
+
+
+    div {
+        flex: 0 0 calc(33.33% - 20px); /* 20px - примерный отступ между элементами */
+        margin-right: 20px;
+        margin-bottom: 20px
+    }
 </style>
 {% endblock%}
 
 
 {% block body %}
 <h1>Билеты по информатике</h1>
-<div>
+
+<div class="container">
     <div>
-    <ul>
-        <h3>ЭКЗАМЕНАЦИОННЫЙ БИЛЕТ №1</h3>
-        <li>Информатика как наука.</li>
-        <li>Основные характеристики компьютера.</li>
-        <li>Работа в текстовом редакторе.</li>
-    </ul>
+        <ul>
+            <h3>ЭКЗАМЕНАЦИОННЫЙ БИЛЕТ №1</h3>
+            <li>Информатика как наука.</li>
+            <li>Основные характеристики компьютера.</li>
+            <li>Работа в текстовом редакторе.</li>
+        </ul>
     </div>
     <div>
         <ul>
@@ -209,7 +220,7 @@ Tickets for computer science
             <li>Работа в текстовом редакторе.</li>
         </ul>
     </div>
-    
+
     <div>
         <ul>
             <h3>ЭКЗАМЕНАЦИОННЫЙ БИЛЕТ №25</h3>
