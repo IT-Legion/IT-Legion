@@ -106,7 +106,7 @@ def roma():
 @app.route('/3')
 def stepan():
 
-    return render_template('/homework/stepan.html')
+    return render_template('/homework/panov/stepan.html')
 
 
 @app.route('/maksim')
