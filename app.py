@@ -124,6 +124,11 @@ def polina():
 
     return render_template('/homework/polina.html')
 
+@app.route('/9')
+def elizaveta():
+
+    return render_template('/homework/khoba/elizaveta.html')
+
 @app.route('/7')
 def lecture_1():
 

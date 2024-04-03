@@ -1,0 +1,95 @@
+{% extends 'base/base.html' %} <!-- Наследует с  базового шаблона -->
+<!-- (можно переопределить в дочерних шаблонах) -->
+{% block title %}команды git{% endblock %} <!-- Заголовок страницы -->
+{% block individual_style %}
+<style>
+   p {
+      padding-bottom: 1em;
+   }
+
+   h2 {
+      padding-bottom: 1em;
+   }
+
+   .container {
+      display: flex;
+   }
+
+   .all_left {
+      width: 30%;
+      /* Устанавливаем ширину 50%, чтобы обеспечить двум блокам равные части горизонтального пространства */
+   }
+
+   .all_right {
+      width: 70%;
+      /* Устанавливаем ширину 50% */
+   }
+   .test{
+      padding: 100px;
+      background-color: rgb(18, 192, 76);
+   }
+</style>
+{% endblock %} <!-- Индивидуальный стиль страницы. Вставьте блок в нужную страницу и в него тег <style></style> -->
+{% block body %}
+
+<div>
+
+   <div class="slide">
+      <h1> Основные команды git</h1>
+      <div class="container">
+         <div class="all_left">
+            <p>
+               Git — это распределённая система контроля версий. Она позволяет разработчикам отслеживать изменения в
+               исходном
+               коде и сотрудничать с другими разработчиками над одним проектом.
+            </p>
+
+         </div>
+         <div class="all_right">
+            <figure>
+
+               <img width="800" height="600" src="static/images/git.jpeg" alt="logo">
+            </figure>
+
+         </div>
+      </div>
+   </div>
+   <div class="slide">
+      <div class="container">
+         <div class="all_left"> </div>
+         <div class="all_right">
+            <table border="5" cellspacimg="10" cellpedding="5">
+               <tr>
+                  <td> инициализация проекта</td>
+                  <td> git init</td>
+               </tr>
+               <tr>
+                  <td> добавление в индекс файлов</td>
+                  <td>git add </td>
+               </tr>
+               <tr>
+                  <td>создать комит</td>
+                  <td>git commit -m "Первый коммит"</td>
+               </tr>
+               <tr>
+                  <td>отправить проект на сервер </td>
+                  <td>git push</td>
+               </tr>
+               <tr>
+                  <td>затянуть проект с сервера</td>
+                  <td>git pull</td>
+               </tr>
+            </table>
+         </div>
+      </div>
+   </div>
+
+
+   <div class="test"><strong>kuhgtjf</strong></div>
+   
+
+
+</div>
+
+
+{% endblock %} <!-- Основное содержимое страницы  -->
