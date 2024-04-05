@@ -129,6 +129,11 @@ def elizaveta():
 
     return render_template('/homework/khoba/elizaveta.html')
 
+@app.route('/matvey')
+def sobolev():
+
+    return render_template('/homework/sobolev/matvey.html')
+
 @app.route('/7')
 def lecture_1():
 
