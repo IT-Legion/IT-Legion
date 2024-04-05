@@ -50,6 +50,11 @@ def computer_science_test():
 
     return render_template('/content/informatics_room/cst.html')
 
+@app.route('/cst2')
+def computer_science_tickets():
+
+    return render_template('/content/informatics_room/cst2.html')
+
 # Обратите внимание! На адресную строку и путь до файла Добро пожаловать, дорогие гости!
 #Старт: В Welcome шаблон:->>
 
@@ -88,7 +93,7 @@ def lesson_py(id):
 @app.route('/1')
 def diana():  
     # Функция для отображения страницы о нас 
-    return render_template('/homework/1.html') 
+    return render_template('content/informatics_room/cst2.html') 
 
 
 
@@ -101,7 +106,7 @@ def roma():
 @app.route('/3')
 def stepan():
 
-    return render_template('/homework/stepan.html')
+    return render_template('/homework/panov/stepan.html')
 
 
 @app.route('/maksim')
@@ -119,10 +124,15 @@ def polina():
 
     return render_template('/homework/polina.html')
 
-@app.route('/7')
-def sofa():
+@app.route('/9')
+def elizaveta():
 
-    return render_template('/homework/sofa.html')
+    return render_template('/homework/khoba/elizaveta.html')
+
+@app.route('/7')
+def lecture_1():
+
+    return render_template('/content/hackers_room/lectures/lecture_1.html')
 
 
 
@@ -130,7 +140,7 @@ def sofa():
 @app.route('/init_in_project')
 def init_in_project():
     # Функция для отображения страницы
-    return render_template('/content/git/init_in_project.html')
+    return render_template('content/git_room/init_in_project.html')
 
 
 @app.route('/test')

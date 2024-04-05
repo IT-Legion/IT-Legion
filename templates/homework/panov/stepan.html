@@ -1,0 +1,77 @@
+{% extends 'base/base.html' %}
+
+{% block title %}
+Хакерские утилиты
+{% endblock%}
+{% block individual_style %}
+<style>
+    p {
+        padding-bottom: 1em;
+    }
+
+    h2 {
+        padding-bottom: 1em;
+    }
+
+    .container {
+        display: flex;
+    }
+
+    .all_left {
+        width: 50%;
+        /* Устанавливаем ширину 50%, чтобы обеспечить двум блокам равные части горизонтального пространства */
+    }
+
+    .all_right {
+        width: 50%;
+        /* Устанавливаем ширину 50% */
+    }
+    .slide{
+        margin-bottom: 10em;
+
+    }
+</style>
+{% endblock%}
+
+{% block body %}
+<div>
+    <h1>Хакерские утилиты</h1>
+
+    <div class="slide">
+        <div class="container">
+            <div class="all_left">
+                <h2>John the Ripper</h2>
+                <p>
+                    — это инструмент
+                    с открытым исходным кодом
+                    для взлома паролей методом перебора.
+                </p>
+                <p>
+                    Установка утилиты:
+                    aptitude install john
+                </p>
+            </div>
+            <div class="all_right">
+                <img src="static/images/JohntheRipper.jpeg" alt="">
+            </div>
+        </div><!-- container -->
+    </div><!--slide -->
+    <div class="slide">
+        <div class="container">
+            <div class="all_left">
+                <h2>Hydra</h2>
+                <p>Обратная связьTHC Hydra — это программное обеспечение для взлома
+                аутентификации с помощью перебора. Если John The Ripper можно использовать для проверки
+                надёжности паролей офлайн, то Hydra аналогичный
+                инструмент, работающий онлайн.</p>
+                
+
+            </div>
+        </div>
+    </div>
+
+
+
+</div>
+
+{% endblock%}
