@@ -1,9 +1,9 @@
 # Импорт класса Flask из библиотеки Flask и функции render_template для рендеринга HTML-шаблонов
 # Импорт функции url_for для создания URL-адресов
-from flask import Flask, render_template, url_for 
+from flask import Flask, render_template,redirect, url_for 
 #from flask_sqlalchemy import SQLAlchemy
 
-# Создание экземпляра веб-приложения Flask с указанием текущего модуля в качестве имени
+# Создание'home' экземпляра веб-приложения Flask с указанием текущего модуля в качестве имени
 app = Flask(__name__)
 
 #app.config['']
@@ -11,8 +11,12 @@ app = Flask(__name__)
 #====ВНИМАНИЕ!====
 # Декоратор для установки маршрута к домашним заданиям:
 # Участники!
-@app.route('/<path:surname>/<path:name>')  # Определяем маршрут, который принимает два параметра: фамилию и имя.
+@app.route('/<path:surname>/<name>')  # Определяем маршрут, который принимает два параметра: фамилию и имя.
 def homework(surname, name):
+    print(type(name))
+    if name in ('home','about','partners'):
+        return redirect(f'/{name}')
+
     try:  # Начинаем блок try-except для обработки возможного исключения.
         # Пытаемся отрендерить шаблон для указанной фамилии и имени.
         return render_template(f'/homework/{surname}/{name}.html')
@@ -101,10 +105,13 @@ def init_in_project():
     return render_template('content/git_room/init_in_project.html')
 
 
-@app.route('/test')
+@app.route('/test/test')
 def test():
     # Функция для отображения страницы
-    return render_template('/init_in_project.html')
+    return redirect('/home')
+
+    #return render_template('/test.html')
+
 
 
 # Условие для проверки, запущен ли этот скрипт напрямую
