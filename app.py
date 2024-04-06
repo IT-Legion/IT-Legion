@@ -8,6 +8,18 @@ app = Flask(__name__)
 
 #app.config['']
 
+#====ВНИМАНИЕ!====
+# Декоратор для установки маршрута к домашним заданиям:
+# Участники!
+@app.route('/<path:surname>/<path:name>')  # Определяем маршрут, который принимает два параметра: фамилию и имя.
+def homework(surname, name):
+    try:  # Начинаем блок try-except для обработки возможного исключения.
+        # Пытаемся отрендерить шаблон для указанной фамилии и имени.
+        return render_template(f'/homework/{surname}/{name}.html')
+    except:  # Если возникает исключение...
+        return "404 Файл данного ученика не найден. 404"  # ...возвращаем сообщение о том, что файл не найден.
+#====ВНИМАНИЕ!====
+
 
 
 # Декоратор для установки маршрута '/' для вызова функции index
@@ -16,6 +28,7 @@ app = Flask(__name__)
 def index():  
     # Функция для отображения главной страницы приложения
     return render_template('main/index.html')   
+
 
 
 # Декоратор для установки маршрута '/about' для вызова функции about
@@ -75,85 +88,10 @@ def guest_space():
 #
 # <--В Welcome шаблон:<<--
 
-
-
-
-
-
-
-
 @app.route('/lesson/<int:id>')
 def lesson_py(id):  
     # Функция для отображения страниц lesson
     return render_template(f'content/python_room/lesson_{id}.html') 
-
-
-
-# Декоратор для установки маршрута к домашним заданиям:
-# У частники!
-@app.route('/<surname>/<name>')
-def нomework(surname,name):
-
-    return render_template(f'/homework/{surname}/{name}.html')
-
-    
-
-
-
-
-
-
-
-# Декоратор для установки маршрута '/дз диана' для вызова функции 
-@app.route('/1')
-def diana():  
-    # Функция для отображения страницы о нас 
-    return render_template('') 
-
-
-
-# Декоратор для установки маршрута '/дз рома' для вызова функции 
-@app.route('/2')
-def roma():  
-    # Функция для отображения страницы о нас 
-    return render_template('') 
-
-@app.route('/3')
-def stepan():
-
-    return render_template('')
-
-
-@app.route('/maksim')
-def maksim():
-
-    return render_template('')
-
-@app.route('/5')
-def nikita():
-
-    return render_template('')
-
-@app.route('/6')
-def polina():
-
-    return render_template('')
-
-@app.route('/9')
-def elizaveta():
-
-    return render_template('/homework/khoba/elizaveta.html')
-
-@app.route('/matvey')
-def sobolev():
-
-    return render_template('/homework/sobolev/matvey.html')
-
-@app.route('/7')
-def lecture_1():
-
-    return render_template('/content/hackers_room/lectures/lecture_1.html')
-
 
 
 # Декоратор для установки маршрута Инициализация в проекте
@@ -167,10 +105,6 @@ def init_in_project():
 def test():
     # Функция для отображения страницы
     return render_template('/init_in_project.html')
-
-
-
-
 
 
 # Условие для проверки, запущен ли этот скрипт напрямую
