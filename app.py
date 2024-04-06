@@ -79,10 +79,25 @@ def guest_space():
 
 
 
+
+
+
 @app.route('/lesson/<int:id>')
 def lesson_py(id):  
     # Функция для отображения страниц lesson
     return render_template(f'content/python_room/lesson_{id}.html') 
+
+
+
+# Декоратор для установки маршрута к домашним заданиям:
+# У частники!
+@app.route('/<surname>/<name>')
+def нomework(surname,name):
+
+    return render_template(f'/homework/{surname}/{name}.html')
+
+    
+
 
 
 
@@ -93,7 +108,7 @@ def lesson_py(id):
 @app.route('/1')
 def diana():  
     # Функция для отображения страницы о нас 
-    return render_template('content/informatics_room/cst2.html') 
+    return render_template('') 
 
 
 
@@ -101,28 +116,28 @@ def diana():
 @app.route('/2')
 def roma():  
     # Функция для отображения страницы о нас 
-    return render_template('/homework/1.html') 
+    return render_template('') 
 
 @app.route('/3')
 def stepan():
 
-    return render_template('/homework/panov/stepan.html')
+    return render_template('')
 
 
 @app.route('/maksim')
 def maksim():
 
-    return render_template('/homework/limarenko/maksim.html')
+    return render_template('')
 
 @app.route('/5')
 def nikita():
 
-    return render_template('/homework/nikita.html')
+    return render_template('')
 
 @app.route('/6')
 def polina():
 
-    return render_template('/homework/polina.html')
+    return render_template('')
 
 @app.route('/9')
 def elizaveta():
