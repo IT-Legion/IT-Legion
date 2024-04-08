@@ -1,10 +1,26 @@
 {% extends 'base/base.html' %}
 
-{% block title %}
-Влад Кузнецов
+{% block title %}Влад Кузнецов{% endblock%}
+
+{% block individual_style %}
+<style>
+h1 {
+    color: magenta;
+}
+
+strong {
+    color: red;
+    font-weight: bold;
+}
+</style>
 {% endblock%}
 
-
 {% block body %}
-Помнит пароль.
+<h1>Игра</h1>
+
+<p>Игра является симулятором автоматизации, где главный герой после крушения корабля на чужой планете пытается построить ракету и улететь. Если игра вам наскучила , то вы ее <strong>не</strong> пройдете. Хорошо, если вы умеете решать разнообразные математические задачи - там вам это понадобится.</p>
+
+<h1>Моды</h1>
+
+<p>Модов к игре предостаточно. Самые популярные из них - это <a href="https://mods.factorio.com/mod/IndustrialRevolution">Industrial Revolution 2</a>, <a href="https://mods.factorio.com/mod/Krastorio2">Krastorio 2</a> и <a href="https://mods.factorio.com/mod/space-exploration">Space Exploration</a>. Если хотите детальнeе ознакомиться с модами из этого списка, впишите в поисковик вашего браузера "factorio best mods" и зайдите на самый первый сайт.</p>
 {% endblock%}
