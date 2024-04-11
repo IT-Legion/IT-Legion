@@ -2,58 +2,266 @@
 <!-- (можно переопределить в дочерних шаблонах) -->
 {% block title %}{% endblock %} <!-- Заголовок страницы -->
 {% block individual_style %}
-<style>
-    p {
-       padding-bottom: 1em;
-    }
- 
-    h2 {
-       padding-bottom: 1em;
-    }
- 
-    .container {
-       display: flex;
-    }
- 
-    .all_left {
-       width: 30%;
-       /* Устанавливаем ширину 50%, чтобы обеспечить двум блокам равные части горизонтального пространства */
-    }
- 
-    .all_right {
-       width: 70%;
-       /* Устанавливаем ширину 50% */
-    }
-    .test{
-       padding: 100px;
-       background-color: rgb(18, 192, 76);
-    }
- </style>
-
+<style>body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+main {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-bottom: 5em;
+}
+h1, h2 {
+    color: #333;
+}
+p {
+    color: #666;
+    line-height: 1.6;
+}
+p:last-child {
+    margin-bottom: 0;
+} </style>
 
 {% endblock %} <!-- Индивидуальный стиль страницы. Вставьте блок в нужную страницу и в него тег <style></style> -->
 {% block body %}
-<h1>Классификация видов угроз информационной безопасности</h1>
-<div class="slide">
-<div class="container"
+<main>
+    <h1>Ключевые слова Python</h1>
+<article>
 
-<div>
-    <h1>Доступность</h1>
-<h2>Внутрений отказ информационой системы</h2>
-<div>
-    <ul>
-        <li>*Нарушение установленных правил эксплутации</li>
-        <li>*Выход системы из штатного режима эксплутации</li>
-        <li>*Ошибки при (пере)конфигурировании системы</li>
-        <li>*Вредоносное программное обеспечение</li>
-        <li>*Отказы программного и аппаратного обеспечения</li>
-        <li>*Разрешение данных</li>
-        <li>*Разрушение или повреждение аппаратуры</li>
-    </ul>
-    <div class="all_right">
-        <h1>Отказ поддерживающей инфраструктуру</h1>
-<p>sdhfuidsgfukdshisdohfdsifjhdskifhdskfhdskfhds</p>
-</div>
+    <table>
+        <thead>
+            <tr>
+                <th colspan="5"><h2></h2></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Ключевое слово</td>
+                <td>  |  </td>
+                <td>Описание</td>
+            </tr>
+            <tr>
+                <td>----------</td>
+                <td></td>
+                <td>----------</td>
+            </tr>
+            <tr>
+                <td>False</td>
+                <td>|</td>
+                <td>Ложь</td>
+            </tr>
+            <tr>
+                <td>True</td>
+                <td>|</td>
+                <td>Прада</td>
+            </tr>
+            <tr>
+                <td>None</td>
+                <td>|</td>
+                <td>«Пустой» объект</td>
+            </tr>
+            <tr>
+                <td>and</td>
+                <td>|</td>
+                <td>Логическое И</td>
+            </tr>
+            <tr>
+                <td>with / as</td>
+                <td>|</td>
+                <td>Менеджер контекста</td>
+            </tr>
+            <tr>
+                <td>assert условие</td>
+                <td>|</td>
+                <td>Возбуждает исключение, если условие ложно</td>
+            </tr>
+            <tr>
+                <td>break</td>
+                <td>|</td>
+                <td>Выход из цикла</td>
+            </tr>
+            <tr>
+                <td>class</td>
+                <td>|</td>
+                <td>Пользовательский тип, состоящий из методов и атрибутов</td>
+            </tr>
+            <tr>
+                <td>continue</td>
+                <td>|</td>
+                <td>Переход на следующую итерацию цикла</td>
+            </tr>
+            <tr>
+                <td>def</td>
+                <td>|</td>
+                <td>Определение функции</td>
+            </tr>
+            <tr>
+                <td>del</td>
+                <td>|</td>
+                <td>Удаление объекта</td>
+            </tr>
+            <tr>
+                <td>elif</td>
+                <td>|</td>
+                <td>В противном случае, если</td>
+            </tr>
+            <tr>
+                <td>else</td>
+                <td>|</td>
+                <td>Иначе</td>
+            </tr>
+            <tr>
+                <td>except</td>
+                <td>|</td>
+                <td>Перехватить исключение</td>
+            </tr>
+            <tr>
+                <td>finally</td>
+                <td>|</td>
+                <td>Вместе с инструкцией try, выполняет инструкции независимо от того, было ли исключение или нет</td>
+            </tr>
+            <tr>
+                <td>for</td>
+                <td>|</td>
+                <td>Цикл for</td>
+            </tr>
+            <tr>
+                <td>from</td>
+                <td>|</td>
+                <td>Импорт нескольких функций из модуля</td>
+            </tr>
+            <tr>
+                <td>global</td>
+                <td>|</td>
+                <td>Позволяет сделать значение переменной, присвоенное ей внутри функции, доступным и за пределами этой функции</td>
+            </tr>
+            <tr>
+                <td>if</td>
+                <td>|</td>
+                <td>Если</td>
+            </tr>
+            <tr>
+                <td>import</td>
+                <td>|</td>
+                <td>Импорт модуля</td>
+            </tr>
+            <tr>
+                <td>in</td>
+                <td>|</td>
+                <td>Проверка на вхождение</td>
+            </tr>
+            <tr>
+                <td>is</td>
+                <td>|</td>
+                <td>Проверка на идентичность</td>
+            </tr>
+            <tr>
+                <td>lambda</td>
+                <td>|</td>
+                <td>Определение анонимной функции</td>
+            </tr>
+            <tr>
+                <td>nonlocal</td>
+                <td>|</td>
+                <td>Позволяет сделать значение переменной, присвоенное ей внутри функции, доступным в объемлющей инструкции</td>
+            </tr>
+            <tr>
+                <td>not</td>
+                <td>|</td>
+                <td>Логическое НЕ</td>
+            </tr>
+            <tr>
+                <td>or</td>
+                <td>|</td>
+                <td>Логическое ИЛИ</td>
+            </tr>
+            <tr>
+                <td>pass</td>
+                <td>|</td>
+                <td>Ничего не делающая конструкция</td>
+            </tr>
+            <tr>
+                <td>raise</td>
+                <td>|</td>
+                <td>Возбудить исключение</td>
+            </tr>
+            <tr>
+                <td>return</td>
+                <td>|</td>
+                <td>Вернуть результат</td>
+            </tr>
+            <tr>
+                <td>try</td>
+                <td>|</td>
+                <td>Выполнить инструкции, перехватывая исключения</td>
+            </tr>
+            <tr>
+                <td>while</td>
+                <td>|</td>
+                <td>Цикл while</td>
+            </tr>
+            <tr>
+                <td>yield</td>
+                <td>|</td>
+                <td>Определение функции-генератора</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+</main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
