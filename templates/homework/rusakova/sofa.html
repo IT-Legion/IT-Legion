@@ -26,7 +26,7 @@
    }
    .test{
       padding: 100px;
-      background-color: rgb(18, 192, 76);
+      background-color: rgb(14, 224, 14);
    } 
 
 
@@ -34,13 +34,58 @@
 {% endblock %} <!-- Индивидуальный стиль страницы. Вставьте блок в нужную страницу и в него тег <style></style> -->
 {% block body %}
     <div>
-        <div class="container">
-            <div class="slide">
-                <div class="all_left">материал слева</div>
-                <div class="all_right">материал справа</div>
-            </div>
-        </div>
-    </div>
+<h1>Приоритеты операторов Python</H1>
+   <p></p>
+   
+      <table border ="5">
+          <thead>
+               <tr>
+                    <th colspan ="3"><h2>Приоритеты</h2><th>
+               <tr>
+           <thead>
+           <tbody>
+                <tr>
+                   <td>Оператор</td>
+                    <td>Описание</td>
+                </tr>
+                    <td>1</td>
+                     <td>()</td>
+                     <td>Скобки</td>
+                  <tr>
+                 <tr>
+                    <td>2</td>
+                    <td>**</td>
+                    <td>Возведение в степень</td>
+                  </tr>
+                 <tr>
+                     <td>3</td>
+                     <td>+x,-x,~x</td>
+                     <td>Унарный плюсб минус и битовое отрицание</td>
+                  </tr>
+                 </tr>
+                     <td>4</td>
+                     <td>*,/,//,%</td>
+                     <td>Умножение,деление,целочисленное деление,остаток от деления </td>
+                  <tr>
+                 <tr>
 
-    
-{% endblock %}
+               </tr>
+                  </tr>
+
+
+
+
+           </tbody>
+
+
+   <table> 
+
+      
+      
+
+   <div>   
+
+   <div>
+
+
+{% endblock %} <!-- Основное содержимое страницы  -->
