@@ -1,0 +1,112 @@
+{% extends 'base/base.html' %} <!-- Наследует с  базового шаблона -->
+<!-- (можно переопределить в дочерних шаблонах) -->
+{% block title %}{% endblock %} <!-- Заголовок страницы -->
+{% block individual_style %}<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f0f0;
+    }
+
+    header {
+        background-color: #333;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+    }
+
+    main {
+        padding: 20px;
+        max-width: 800px;
+        margin: 0 auto;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        margin-top: 20px;
+        margin-bottom: 5em;
+    }
+
+    h1,
+    h2 {
+        color: #333;
+    }
+
+    p {
+        color: #666;
+        line-height: 1.6;
+    }
+
+    p:last-child {
+        margin-bottom: 0;
+    }
+    .description{
+        margin-bottom: 3em;
+    }
+    .td-1{
+       text-align: center; 
+    }
+  
+</style>{% endblock %}
+<!-- Индивидуальный стиль страницы. Вставьте блок в нужную страницу и в него тег <style></style> -->
+{% block body %}
+ <main>
+    <h1>Арифметические операторы Python</h1>
+    <article>
+        <div class="description">
+               <p>Что такое оператор и операнды? Это можно объяснить простым примером: 10 + 5 = 15. В этом выражении 10 и 5 — операнды. Знак + — оператор.
+        </p>
+        <p>Пусть переменная a = 10, а переменная b = 5</p>
+
+        </div>
+     
+        <table>
+            <tr>
+                <td class="td-1">Оператор</td>
+                <td class="td-2" style="text-align: center;">Описание</td>
+                <td class="td-3">Пример</td>
+            </tr>
+            <tr> 
+                <td class="td-1">+</td>
+                <td class="td-2">Добавление — добавляет левый операнд к правому</td>
+                <td class="td-3">a + b = 15</td>
+            </tr>
+            <tr>
+                <td class="td-1">-</td>
+                <td class="td-2">Вычитание — вычитает правый операнд из левого</td>
+                <td class="td-3">a — b = 5</td>
+            </tr>
+            <tr>
+                <td class="td-1">*</td>
+                <td class="td-2">Умножение — умножает левый операнд на правый</td>
+                <td class="td-3">a * b = 50</td>
+            </tr>
+            <tr>
+                <td class="td-1">/</td>
+                <td class="td-2">Деление — делит левый операнд на правый</td>
+                <td class="td-3">a / b = 2</td>
+            </tr>
+            <tr>
+                <td class="td-1">%</td>
+                <td class="td-2">Деление по модулю — делит левый операнд на правый и возвращает остаток. С помощью него, например, можно проверять числа на четность и нечетность. Если левый операнд меньше правого, то результатом будет левый операнд</td>
+                <td class="td-3">a % b = 0</td>
+            </tr>
+            <tr>
+                <td class="td-1">**</td>
+                <td class="td-2">Возведение в степень</td>
+                <td class="td-3">a ** b = 100000
+                </td>
+            </tr>
+            <tr>
+                <td class="td-1">//</td>
+                <td class="td-2">Целочисленное деление — деление в котором возвращается только целая часть результата. Часть после запятой отбрасывается.</td>
+                <td class="td-3">9 // 2 = 4 9.0 // 2.0 = 4.0</td>
+            </tr>
+        </table>
+
+
+    </article>
+ </main>
+
+
+{% endblock %} <!-- Основное содержимое страницы  -->
