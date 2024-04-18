@@ -30,91 +30,135 @@
         background-color: rgb(18, 192, 76);
     }
 
-    .main-content {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        margin-bottom: 100px;
+
+
+    .slide {
+        padding-bottom: 1em;
     }
 
-    .slide { 
-        padding-bottom: 1em;
+    main {
+        padding: 20px;
+        max-width: 800px;
+        margin: 0 auto;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        margin-top: 20px;
+        margin-bottom: 5em;
     }
 </style>
 {% endblock %} <!-- Индивидуальный стиль страницы. Вставьте блок в нужную страницу и в него тег <style></style> -->
 
 
 {% block body %}
-<div class="main-content">
-    <div class="slide">
-        <h1> Основные команды git</h1>
-        <div class="container">
-            <div class="all_left">
-                <p>
-                    Git — это распределённая система контроля версий. Она позволяет разработчикам отслеживать изменения
-                    в
-                    исходном
-                    коде и сотрудничать с другими разработчиками над одним проектом.
-                </p>
 
-            </div>
-            <div class="all_right">
-                <figure>
-                    <img width="400" height="300" src="static/images/logo/git/Git-Logo-1788C.svg" alt="logo">
-                </figure>
+<main>
+    <article>
+        <div class="slide">
+            <h1> Основные команды git</h1>
+            <div class="container">
+                <div class="all_left">
+                    <p>
+                        Git — это распределённая система контроля версий. Она позволяет разработчикам отслеживать
+                        изменения
+                        в
+                        исходном
+                        коде и сотрудничать с другими разработчиками над одним проектом.
+                    </p>
 
+                </div>
+                <div class="all_right">
+                    <figure>
+                        <img src="https://git-scm.com/images/logos/logomark-orange@2x.png" alt="logo">
+                    </figure>
+
+                </div>
             </div>
         </div>
-    </div>
-    <div class="slide">
-        <p>Для начала работы с гит нам нужно его настроить. Для этого нам нужно всего 3 команды:</p>
-        <div class="container">
+        <div class="slide">
+            <p>Для начала работы с гит нам нужно его настроить. Для этого нам нужно всего 3 команды:</p>
+            <div class="container">
 
-            <table border="5">
+                <table border="5">
+                    <tr>
+                        <td>Настройка имени</td>
+                        <td>git config --global user.name "Ваше имя или логин"</td>
+                    </tr>
+                    <tr>
+                        <td>Настройка email</td>
+                        <td>git config --global user.email "Ваш email"</td>
+                    </tr>
+                    <tr>
+                        <td>Проверка конфигурации</td>
+                        <td>git config --list --show-origin</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="slide">
+            <p>После чего в проекте делаем следующее:</p>
+            <table border="5" cellspacimg="10" cellpedding="5">
                 <tr>
-                    <td>Настройка имени</td>
-                    <td>git config --global user.name "Ваше имя или логин"</td>
+                    <td> инициализация проекта</td>
+                    <td> git init</td>
                 </tr>
                 <tr>
-                    <td>Настройка email</td>
-                    <td>git config --global user.email "Ваш email"</td>
+                    <td> добавление в индекс файлов</td>
+                    <td>git add </td>
                 </tr>
                 <tr>
-                    <td>Проверка конфигурации</td>
-                    <td>git config --list --show-origin</td>
+                    <td>создать комит</td>
+                    <td>git commit -m "Первый коммит"</td>
+                </tr>
+                <tr>
+                    <td>отправить проект на сервер </td>
+                    <td>git push</td>
+                </tr>
+                <tr>
+                    <td>затянуть проект с сервера</td>
+                    <td>git pull</td>
+                </tr>
+            </table>
+        </div> <!-- slide -->
+        <div class="slide">
+            <p>Если вы хотите вернуться к последнему коммиту в вашей репозитории, вы можете воспользоваться командой git
+                reset:</p>
+            <table border="5" cellspacimg="10" cellpedding="5">
+                <tr>
+                    <td>вернуться к последнему коммиту</td>
+                    <td>git reset --hard HEAD</td>
                 </tr>
             </table>
         </div>
-    </div>
-
-    <div class="slide">
-        <p>После чего в проекте делаем следующее:</p>
-        <table border="5" cellspacimg="10" cellpedding="5">
-            <tr>
-                <td> инициализация проекта</td>
-                <td> git init</td>
-            </tr>
-            <tr>
-                <td> добавление в индекс файлов</td>
-                <td>git add </td>
-            </tr>
-            <tr>
-                <td>создать комит</td>
-                <td>git commit -m "Первый коммит"</td>
-            </tr>
-            <tr>
-                <td>отправить проект на сервер </td>
-                <td>git push</td>
-            </tr>
-            <tr>
-                <td>затянуть проект с сервера</td>
-                <td>git pull</td>
-            </tr>
-        </table>
+        <div class="slide">
+            <table>
+                <p>Если вы хотите сохранить изменения, сделанные после последнего коммита, вы можете использовать
+                    команду
+                    git stash, чтобы временно спрятать их, а затем применить их после сброса HEAD:</p>
+                <table border="5" cellspacimg="10" cellpedding="5">
+                    <tr>
+                        <td>временно сохранить изменения</td>
+                        <td>git stash</td>
+                    </tr>
+                    <tr>
+                        <td>вернуться к последнему коммиту</td>
+                        <td>git reset --hard HEAD</td>
+                    </tr>
+                    <tr>
+                        <td>применить последние сохранение</td>
+                        <td>git stash pop</td>
+                    </tr>
+                </table>
+            </table>
         </div>
-    </div>
-</div>
+
+
+
+    </article>
+</main>
+
+
 
 
 {% endblock %} <!-- Основное содержимое страницы  -->
