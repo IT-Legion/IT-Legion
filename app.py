@@ -105,6 +105,19 @@ def init_in_project():
     return render_template('content/git_room/init_in_project.html')
 
 
+
+@app.route('/python-notes/<int:id>')
+def python_notes(id):
+    if id == 1:
+        return render_template('/content/python_room/notes/telebot.html')
+
+
+
+
+
+
+
+
 @app.route('/test/test')
 def test():
     # Функция для отображения страницы
