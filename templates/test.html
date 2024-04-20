@@ -1,16 +1,41 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Бублик</title>
-</head>
-<body>
+{% extends 'base/base.html' %}  <!-- Наследует с  базового шаблона -->
+<!-- (можно переопределить в дочерних шаблонах) -->
+{% block title %}Вход{% endblock %} <!-- Заголовок страницы -->
+{% block individual_style %}
+<style>
+</style>
+{% endblock %} <!-- Индивидуальный стиль страницы. Вставьте блок в нужную страницу и в него тег <style></style> -->
+{% block body %}
+{% extends 'base/base.html' %}
 
-<svg width="150" height="500">
-  <circle cx="50" cy="50" r="150" stroke="black" stroke-width="4" fill=10 />
+{% block title %}Регистрация{% endblock %}
 
-</svg>
+{% block individual_style %}
+<style>
+    /* Ваши индивидуальные стили для этой страницы */
+</style>
+{% endblock %}
 
-</body>
-</html>
+{% block body %}
+<div class="registration-form">
+    <h2>Регистрация</h2>
+    <form method="post">
+        <!-- Здесь разместите поля для ввода информации для регистрации -->
+        <div class="form-group">
+            <label for="username">Имя пользователя:</label>
+            <input type="text" id="username" name="username" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="password">Пароль:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <!-- Другие поля для регистрации -->
+
+        <button type="submit">Зарегистрироваться</button>
+    </form>
+</div>
+{% endblock %}

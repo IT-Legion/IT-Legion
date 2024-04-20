@@ -1,133 +1,131 @@
-# Импорт класса Flask из библиотеки Flask и функции render_template для рендеринга HTML-шаблонов
-# Импорт функции url_for для создания URL-адресов
-from flask import Flask, render_template,redirect, url_for 
-#from flask_sqlalchemy import SQLAlchemy
+# Импортируем класс Flask из библиотеки Flask и необходимые функции
+from flask import Flask, render_template, make_response, redirect, url_for, request, session 
+import datetime
 
-# Создание'home' экземпляра веб-приложения Flask с указанием текущего модуля в качестве имени
+# Создаем экземпляр веб-приложения Flask
 app = Flask(__name__)
 
-#app.config['']
+# Устанавливаем секретный ключ для защиты сессий
+app.config['SECRET_KEY'] = "e6a07d016fec9deab0f118b09e3f9220aae757d4"
+# Устанавливаем время жизни сессии
+app.permanent_session_lifetime = datetime.timedelta(days=1)
 
-#====ВНИМАНИЕ!====
-# Декоратор для установки маршрута к домашним заданиям:
-# Участники!
-@app.route('/<path:surname>/<name>')  # Определяем маршрут, который принимает два параметра: фамилию и имя.
+# Декоратор маршрута для обработки запросов к домашним заданиям участников
+@app.route('/<path:surname>/<name>')
 def homework(surname, name):
-    print(type(name))
-    if name in ('home','about','partners'):
+    # Проверяем, является ли имя страницы одним из стандартных: 'home', 'about', 'partners'
+    if name in ('home', 'about', 'partners'):
+        # Если да, перенаправляем на соответствующий маршрут
         return redirect(f'/{name}')
-
-    try:  # Начинаем блок try-except для обработки возможного исключения.
-        # Пытаемся отрендерить шаблон для указанной фамилии и имени.
+    
+    try:
+        # Пытаемся отрендерить HTML-шаблон для указанной фамилии и имени
         return render_template(f'/homework/{surname}/{name}.html')
-    except:  # Если возникает исключение...
-        return "404 Файл данного ученика не найден. 404"  # ...возвращаем сообщение о том, что файл не найден.
-#====ВНИМАНИЕ!====
+    except:
+        # Если не удается найти шаблон, возвращаем ошибку 404
+        return "404 Файл данного ученика не найден. 404"
 
-
-
-# Декоратор для установки маршрута '/' для вызова функции index
+# Декоратор маршрута для главной страницы
 @app.route('/home')
 @app.route('/')
 def index():  
     # Функция для отображения главной страницы приложения
     return render_template('main/index.html')   
 
-
-
-# Декоратор для установки маршрута '/about' для вызова функции about
+# Декоратор маршрута для страницы "О нас"
 @app.route('/about')
 def about():  
-    # Функция для отображения страницы о нас 
-    return render_template('main/about.html')   
+    # Функция для отображения страницы "О нас"
+    return render_template('main/about.html')
 
-
-# Декоратор для установки маршрута '/partners' для вызова функции partners
+# Декоратор маршрута для страницы "Партнеры"
 @app.route('/partners')
 def partners():  
-    # Функция для отображения страницы о нас 
+    # Функция для отображения страницы "Партнеры"
     return render_template('main/partners.html') 
 
-
-# Декоратор для установки маршрута '/information_concept' для вызова функции partners
+# Декоратор маршрута для страницы информатики
 @app.route('/informatics')
 def informatics_main():
-    # Функция для отображения страницы
+    # Функция для отображения страницы информатики
     return render_template('/content/informatics_room/informatics.html')
 
-
-# Декоратор для установки маршрута '/information_concept' для вызова функции partners
+# Декоратор маршрута для страницы концепции информации
 @app.route('/information_concept')
 def information_concept():  
-    # Функция для отображения страницы о нас 
-    return render_template('/content/informatics_room/information_concept.html') 
+    # Функция для отображения страницы концепции информации
+    return render_template('/content/informatics_room/information_concept.html')
 
+# Декоратор маршрута для страницы тестирования по информатике
 @app.route('/cst')
 def computer_science_test():
-
+    # Функция для отображения страницы тестирования по информатике
     return render_template('/content/informatics_room/cst.html')
 
+# Декоратор маршрута для страницы тестирования билетов по информатике
 @app.route('/cst2')
 def computer_science_tickets():
-
+    # Функция для отображения страницы тестирования билетов по информатике
     return render_template('/content/informatics_room/cst2.html')
 
-# Обратите внимание! На адресную строку и путь до файла Добро пожаловать, дорогие гости!
-#Старт: В Welcome шаблон:->>
-
+# Декоратор маршрута для гостевой комнаты по Python
 @app.route('/guest_room_python')
 def guest_room():
-    
+    # Функция для отображения гостевой комнаты по Python
     return render_template('/content/python_room/main_in_python.html')
 
-#<--В Welcome шаблон:<<--
+# Декоратор маршрута для гостевой комнаты по космосу
 @app.route('/guest_room_space')
 def guest_space():
+    # Функция для отображения гостевой комнаты по космосу
+    return "<a href='https://sonik.space/'>sonik</a>  <a href=''></a>  <a href='https://www.google.com/earth/studio/'>earth/studio/</a> https://introsat.ru/"
 
-    return "<a href='https://sonik.space/'>sonik</a>  <a href=''></a>  <a href='https://www.google.com/earth/studio/'>earth/studio/</a> https://introsat.ru/"   
-#-->В Welcome шаблон:->>#end:
-#
-#       Шаблон!
-#-->В Welcome шаблон:-->
-#
-# <--В Welcome шаблон:<<--
-
+# Декоратор маршрута для страниц уроков по Python
 @app.route('/lesson/<int:id>')
 def lesson_py(id):  
-    # Функция для отображения страниц lesson
+    # Функция для отображения страницы уроков по Python
     return render_template(f'content/python_room/lesson_{id}.html') 
 
-
-# Декоратор для установки маршрута Инициализация в проекте
+# Декоратор маршрута для страницы инициализации в проекте
 @app.route('/init_in_project')
 def init_in_project():
-    # Функция для отображения страницы
+    # Функция для отображения страницы инициализации в проекте
     return render_template('content/git_room/init_in_project.html')
 
-
-
+# Декоратор маршрута для страницы заметок по Python
 @app.route('/python-notes/<int:id>')
 def python_notes(id):
+    # Функция для отображения страницы заметок по Python
     if id == 1:
         return render_template('/content/python_room/notes/telebot.html')
 
-
-
-
-
-
-
-
-@app.route('/test/test')
+# Декоратор маршрута для тестовой страницы
+@app.route('/test')
 def test():
-    # Функция для отображения страницы
-    return redirect('/home')
+    # Увеличиваем счетчик посещений при каждом обращении к странице
+    if "visits" in session:
+        session['visits'] = session.get('visits') + 1
+    else:
+        session['visits'] = 1
+    return f"Число просмотров: {session['visits']} "
 
-    #return render_template('/test.html')
+# Пример сессии
+data = [1, 2, 3, 4]
+@app.route('/example')
+def for_example_session():
+    # Устанавливаем сессию как постоянную
+    session.permanent = True
+    # Если данные еще не были сохранены в сессии
+    if 'data' not in session:
+        session['data'] = data
+    else:
+        # Увеличиваем второй элемент списка на единицу
+        session['data'][1] += 1
+        # Указываем, что данные в сессии были изменены
+        session.modified = True
+    return f"<p>session['data']: {session['data']}"
 
-
-
-# Условие для проверки, запущен ли этот скрипт напрямую
-if __name__ == '__main__':  
-    # Запуск веб-приложения Flask в режиме отладки
-    app.run(debug=True)  
+# Запускаем приложение, если файл запущен напрямую
+if __name__ == '__main__':
+    # Запускаем веб-приложение Flask в режиме отладки
+    app.run(debug=True)
