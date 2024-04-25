@@ -99,6 +99,17 @@ def python_notes(id):
     if id == 1:
         return render_template('/content/python_room/notes/telebot.html')
 
+# Декоратор маршрута для страницы заметок по Python
+@app.route('/git')
+def git():
+    # Функция для отображения страницы заметок по Python
+    return render_template('/content/git_room/main_in_git.html')
+
+
+    
+
+
+
 # Декоратор маршрута для тестовой страницы
 @app.route('/test')
 def test():
