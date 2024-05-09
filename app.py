@@ -10,6 +10,10 @@ app.config['SECRET_KEY'] = "e6a07d016fec9deab0f118b09e3f9220aae757d4"
 # Устанавливаем время жизни сессии
 app.permanent_session_lifetime = datetime.timedelta(days=1)
 
+
+
+
+
 # Декоратор маршрута для обработки запросов к домашним заданиям участников
 @app.route('/<path:surname>/<name>')
 def homework(surname, name):
@@ -135,6 +139,31 @@ def for_example_session():
         # Указываем, что данные в сессии были изменены
         session.modified = True
     return f"<p>session['data']: {session['data']}"
+
+#Пример запроса
+@app.route('/hello-world/<name>')
+def hello_world(name):
+    # Словарь с переводом дней недели на русский
+    weekday_translation = {
+    'monday': 'понедельника',
+    'tuesday': 'вторника',
+    'wednesday': 'среды',
+    'thursday': 'четверга',
+    'friday': 'пятницы',
+    'saturday': 'субботы',
+    'sunday': 'воскресенья'
+}
+    # Получаем текущий день недели на английском
+    weekday_en = datetime.datetime.now().strftime('%A').lower()
+    # Переводим текущий день недели на русский
+    weekday_ru = weekday_translation.get(weekday_en, 'день недели')
+    # Формируем пожелание на русском языке
+    if weekday_ru[-1] == 'ы':
+        wish_ru = f'Хорошей {weekday_ru}!'
+    else:
+        wish_ru = f'Хорошего {weekday_ru}!'
+    return f'Привет, {name}. {wish_ru}'
+
 
 # Запускаем приложение, если файл запущен напрямую
 if __name__ == '__main__':
