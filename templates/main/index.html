@@ -1,17 +1,125 @@
-{% extends 'base/base.html' %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT Legion</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #FFFFFF;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #202020;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            margin: 0;
+        }
+        nav {
+            background-color: #1a1a1a;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: #00FF00;
+            text-decoration: none;
+            padding: 10px;
+        }
+        nav a:hover {
+            background-color: #00FF00;
+            color: #121212;
+        }
+        section {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>IT Legion</h1>
+    </header>
+    <nav>
+        <a href="#html">HTML</a>
+        <a href="#css">CSS</a>
+        <a href="#javascript">JavaScript</a>
+        <a href="#python">Python</a>
+        <a href="#php">PHP</a>
+        <a href="#csharp">C#</a>
+        <a href="#cplusplus">C++</a>
+        <a href="#c">C</a>
+        <a href="#arduino">Arduino</a>
+    </nav>
+    <section id="html">
+        <h2>HTML</h2>
+        <p>Основной язык разметки веб-страниц.</p>
+        <p id="html-info">Здесь будет отображаться информация о HTML</p>
+        <script>
+            // Создаем новый объект XMLHttpRequest
+            // XMLHttpRequest это 
+    
+            var xhr = new XMLHttpRequest();
+            // Устанавливаем метод запроса и URL-адрес файла с информацией
+            xhr.open('GET', '/html_info', true);
+        
+            // Отправляем запрос
+            xhr.send();
+        
+            // Устанавливаем обработчик события для выполнения кода при получении ответа от сервера
+            xhr.onreadystatechange = function() {
+                // Проверяем состояние запроса
+                if (xhr.readyState === XMLHttpRequest.DONE) {
+                    // Проверяем статус ответа
+                    if (xhr.status === 200) {
+                        // Если запрос успешный, обновляем содержимое элемента с id="html-info"
+                        document.getElementById('html-info').textContent = xhr.responseText;
+                    } else {
+                        // Если произошла ошибка, выводим сообщение об ошибке
+                        document.getElementById('html-info').textContent = 'Ошибка при загрузке информации';
+                    }
+                }
+            };
+        </script>
 
-{% block title %}
-Home    
-{% endblock%}
+    </section>
 
-{% block body %}
+    
 
-<div class="home-main-choice">
-    <ul>
-        <li><a href="guest_room_python">Python</a></li>
-        <li><a href="informatics">Информатика</a></li>
-        <li><a href="#">HTML|CSS|JS</a></li>
-    </ul>
-</div>
-
-{% endblock%}
+    <section id="css">
+        <h2>CSS</h2>
+        <p>Язык таблиц стилей для оформления веб-страниц.</p>
+    </section>
+    <section id="javascript">
+        <h2>JavaScript</h2>
+        <p>Язык программирования для создания интерактивных элементов на веб-страницах.</p>
+    </section>
+    <section id="python">
+        <h2>Python</h2>
+        <p>Универсальный высокоуровневый язык программирования.</p>
+    </section>
+    <section id="php">
+        <h2>PHP</h2>
+        <p>Язык программирования общего назначения, специализированный для веб-разработки.</p>
+    </section>
+    <section id="csharp">
+        <h2>C#</h2>
+        <p>Язык программирования, разработанный Microsoft, часто используется для разработки приложений под платформу .NET.</p>
+    </section>
+    <section id="cplusplus">
+        <h2>C++</h2>
+        <p>Мощный язык программирования, часто используемый для системного программирования и разработки игр.</p>
+    </section>
+    <section id="c">
+        <h2>C</h2>
+        <p>Процедурный язык программирования, часто используемый для системного программирования и разработки операционных систем.</p>
+    </section>
+    <section id="arduino">
+        <h2>Arduino</h2>
+        <p>Платформа для создания интерактивных электронных устройств.</p>
+    </section>
+</body>
+</html>

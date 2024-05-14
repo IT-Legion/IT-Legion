@@ -1,5 +1,6 @@
+import json
 # Импортируем класс Flask из библиотеки Flask и необходимые функции
-from flask import Flask, render_template, make_response, redirect, url_for, request, session 
+from flask import Flask, render_template, jsonify, make_response, redirect, url_for, request, session 
 import datetime
 
 # Создаем экземпляр веб-приложения Flask
@@ -9,6 +10,19 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = "e6a07d016fec9deab0f118b09e3f9220aae757d4"
 # Устанавливаем время жизни сессии
 app.permanent_session_lifetime = datetime.timedelta(days=1)
+
+
+
+@app.route('/html_info')
+def html_info():
+    with open('templates/main/html_info.json', 'r') as file:
+        html_info_data = json.load(file)
+        print(html_info_data)
+    return jsonify(html_info_data)
+        
+
+
+
 
 
 
