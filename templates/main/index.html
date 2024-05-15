@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,114 +13,127 @@
             margin: 0;
             padding: 0;
         }
+
         header {
             background-color: #202020;
             padding: 20px;
             text-align: center;
         }
+
         h1 {
             margin: 0;
         }
+
         nav {
             background-color: #1a1a1a;
             padding: 10px;
             text-align: center;
         }
+
         nav a {
             color: #00FF00;
             text-decoration: none;
             padding: 10px;
         }
+
         nav a:hover {
             background-color: #00FF00;
             color: #121212;
         }
+
         section {
             padding: 20px;
         }
     </style>
 </head>
+
 <body>
     <header>
         <h1>IT Legion</h1>
     </header>
     <nav>
-        <a href="#html">HTML</a>
-        <a href="#css">CSS</a>
-        <a href="#javascript">JavaScript</a>
-        <a href="#python">Python</a>
-        <a href="#php">PHP</a>
-        <a href="#csharp">C#</a>
-        <a href="#cplusplus">C++</a>
-        <a href="#c">C</a>
-        <a href="#arduino">Arduino</a>
+        <a href="#GIT">Git</a>
+        <a href="#HTML">HTML</a>
+        <a href="#CSS">CSS</a>
+        <a href="#JS">JavaScript</a>
+        <a href="#Python">Python</a>
+        <a href="#PHP">PHP</a>
+        <a href="#C">C</a>
+        <a href="#C Sharp">C#</a>
+        <a href="#CPlusPlus">C++</a>
+        <a href="#Arduino">Arduino</a>
+        <a href="#DB">Database</a>
+        <a href="#DS">Data Science</a>
     </nav>
-    <section id="html">
+    <section id="#GIT">
+        <h2>Git</h2>
+        <p>Бесплатная распределенная система контроля версий с открытым исходным кодом, предназначенная для быстрой и эффективной обработки любых проектов, от небольших до очень крупных.</p>
+        <p id="GIT-info">Здесь будет отображаться информация о Git</p>
+    </section>
+    <section id="#HTML">
         <h2>HTML</h2>
         <p>Основной язык разметки веб-страниц.</p>
-        <p id="html-info">Здесь будет отображаться информация о HTML</p>
-        <script>
-            // Создаем новый объект XMLHttpRequest
-            // XMLHttpRequest это 
-    
-            var xhr = new XMLHttpRequest();
-            // Устанавливаем метод запроса и URL-адрес файла с информацией
-            xhr.open('GET', '/html_info', true);
-        
-            // Отправляем запрос
-            xhr.send();
-        
-            // Устанавливаем обработчик события для выполнения кода при получении ответа от сервера
-            xhr.onreadystatechange = function() {
-                // Проверяем состояние запроса
-                if (xhr.readyState === XMLHttpRequest.DONE) {
-                    // Проверяем статус ответа
-                    if (xhr.status === 200) {
-                        // Если запрос успешный, обновляем содержимое элемента с id="html-info"
-                        document.getElementById('html-info').textContent = xhr.responseText;
-                    } else {
-                        // Если произошла ошибка, выводим сообщение об ошибке
-                        document.getElementById('html-info').textContent = 'Ошибка при загрузке информации';
-                    }
-                }
-            };
-        </script>
-
+        <p id="HTML-info">Здесь будет отображаться информация о HTML</p>
     </section>
 
-    
-
-    <section id="css">
+    <section id="CSS">
         <h2>CSS</h2>
         <p>Язык таблиц стилей для оформления веб-страниц.</p>
+        <p id="CSS-info">Здесь будет отображаться информация о CSS</p>
     </section>
-    <section id="javascript">
+    <section id="JS">
         <h2>JavaScript</h2>
         <p>Язык программирования для создания интерактивных элементов на веб-страницах.</p>
+        <p id="NAME-info">Здесь будет отображаться информация о NAME</p>
+
     </section>
-    <section id="python">
+    <section id="Python">
         <h2>Python</h2>
         <p>Универсальный высокоуровневый язык программирования.</p>
+        <p id="NAME-info">Здесь будет отображаться информация о NAME</p>
     </section>
-    <section id="php">
+    <section id="PHP">
         <h2>PHP</h2>
         <p>Язык программирования общего назначения, специализированный для веб-разработки.</p>
+        <p id="NAME-info">Здесь будет отображаться информация о NAME</p>
     </section>
-    <section id="csharp">
+    <section id="C">
+        <h2>C</h2>
+        <p>Процедурный язык программирования, часто используемый для системного программирования и разработки
+            операционных систем.</p>
+        <p id="NAME-info">Здесь будет отображаться информация о NAME</p>
+    </section>
+    <section id="C Sharp">
         <h2>C#</h2>
-        <p>Язык программирования, разработанный Microsoft, часто используется для разработки приложений под платформу .NET.</p>
+        <p>Язык программирования, разработанный Microsoft, часто используется для разработки приложений под платформу
+            .NET.</p>
+        <p id="NAME-info">Здесь будет отображаться информация о NAME</p>
     </section>
-    <section id="cplusplus">
+    <section id="CPlusPlus">
         <h2>C++</h2>
         <p>Мощный язык программирования, часто используемый для системного программирования и разработки игр.</p>
+        <p id="NAME-info">Здесь будет отображаться информация о NAME</p>
     </section>
-    <section id="c">
-        <h2>C</h2>
-        <p>Процедурный язык программирования, часто используемый для системного программирования и разработки операционных систем.</p>
-    </section>
-    <section id="arduino">
+
+    <section id="Arduino">
         <h2>Arduino</h2>
         <p>Платформа для создания интерактивных электронных устройств.</p>
+        <p id="NAME-info">Здесь будет отображаться информация о NAME</p>
+    </section>
+    <section id="DB">
+        <h2>Database</h2>
+        <p><b>База данных (DB)</b> — набор информации, которая упорядоченно хранится в электронном виде.</p>
+        <p id="NAME-info">Здесь будет отображаться информация о NAME</p>
+        <!--  Преимущества такого хранения данных: -->
+    </section>
+    <section id="DS">
+        <h2>Data Science</h2>
+        <p><b>
+                Наука о данных (DS)</b> — это междисциплинарная область на стыке статистики, математики, системного
+            анализа и
+            машинного обучения, которая охватывает все этапы работы с данными. Она предполагает исследование и анализ
+            сверхбольших массивов информации и ориентирована в первую очередь на получение практических результатов.</p>
+        <p id="NAME-info">Здесь будет отображаться информация о NAME</p>
     </section>
 </body>
 </html>
