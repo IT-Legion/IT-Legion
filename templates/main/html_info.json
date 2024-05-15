@@ -1,8 +1,52 @@
 {
-    "title": "HTML",
-    "description": "HTML (Hypertext Markup Language) is the standard markup language for documents designed to be displayed in a web browser.",
-    "usage": "It can be used with CSS and JavaScript to create visually engaging and interactive websites.",
-    "version": "HTML5",
-    "author": "Tim Berners-Lee"
-  }
-  
+    "lesson topics": {
+        "lesson_0": "intro",
+        "lesson_1": [
+            "Горизонт развития событий",
+            "Ветвление"],
+        "lesson_2" : "Череда событий"
+    },
+    "Семестр 5": {
+        "Проектирование и дизайн информационных систем": {
+            "all_time": "180",
+            "lesson_time": "50",
+            "practice_time": "50",
+            "Course project": "16",
+            "CP": "64",
+            "number of couples per week": "3",
+            "Разработка кода информационных систем": {
+                "all_time": "68",
+                "lesson_time": "34",
+                "practice_time": "34",
+                "number of couples per week": "2"
+            },
+            "Тестирование информационных систем" : {
+                "all_time": "68",
+                "lesson_time": "34",
+                "practice_time": "34",
+                "number of couples per week": "2"
+            }
+        },
+        "Проектирование, разработка и оптимизация веб-приложений": {
+            "all": {
+                "all_time": "188",
+                "lesson_time": "84",
+                "practice_time": "86",
+                "CP": "18",
+                "number of couples per week": ""
+            },
+            "Проектирование и разработка веб-приложений": {
+                "all_time": "68",
+                "lesson_time": "34",
+                "practice_time": "34",
+                "CP": "8",
+                "number of couples per week": ""
+            },
+            "Оптимизация веб-приложений": {
+                "all_time": "68",
+                "lesson_time": "34",
+                "practice_time": "34"
+            }
+        }
+    }
+}

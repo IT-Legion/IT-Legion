@@ -15,16 +15,18 @@ app.permanent_session_lifetime = datetime.timedelta(days=1)
 
 @app.route('/html_info')
 def html_info():
+    string = ""
     with open('templates/main/html_info.json', 'r') as file:
         html_info_data = json.load(file)
-        print(html_info_data)
-    return jsonify(html_info_data)
-        
+        print(type(html_info_data["lesson topics"]))
+        for topic, details in html_info_data["lesson topics"].items():
+            print(topic)
+            print(details)
+            string += f"\n{topic}: {details}<br>"
+            print(string)
+    print(string)
 
-
-
-
-
+    return string
 
 
 
