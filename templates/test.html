@@ -1,41 +1,46 @@
-{% extends 'base/base.html' %}  <!-- Наследует с  базового шаблона -->
-<!-- (можно переопределить в дочерних шаблонах) -->
-{% block title %}Вход{% endblock %} <!-- Заголовок страницы -->
-{% block individual_style %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Git Info</title>
 <style>
+    /* Скрыть информацию о Git по умолчанию */
+    #GIT-info {
+        display: none;
+    }
 </style>
-{% endblock %} <!-- Индивидуальный стиль страницы. Вставьте блок в нужную страницу и в него тег <style></style> -->
-{% block body %}
-{% extends 'base/base.html' %}
+</head>
+<body>
+<section id="GIT">
+    <h2>Git</h2>
+    <p>Бесплатная распределенная система контроля версий с открытым исходным кодом, предназначенная для быстрой и эффективной обработки любых проектов, от небольших до очень крупных.</p>
+    <p id="GIT-info">Здесь будет отображаться информация о Git</p>
+    <!-- Добавляем кнопку для отображения информации -->
+    <button id="showInfo">Показать информацию</button>
+</section>
 
-{% block title %}Регистрация{% endblock %}
+<script>
+// Получаем ссылки на элементы
+const gitInfo = document.getElementById('GIT-info');
+const showButton = document.getElementById('showInfo');
 
-{% block individual_style %}
-<style>
-    /* Ваши индивидуальные стили для этой страницы */
-</style>
-{% endblock %}
+// Функция для отображения информации при наведении мыши
+function showInfoOnHover() {
+    gitInfo.style.display = 'block';
+}
 
-{% block body %}
-<div class="registration-form">
-    <h2>Регистрация</h2>
-    <form method="post">
-        <!-- Здесь разместите поля для ввода информации для регистрации -->
-        <div class="form-group">
-            <label for="username">Имя пользователя:</label>
-            <input type="text" id="username" name="username" required>
-        </div>
-        <div class="form-group">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-        </div>
-        <div class="form-group">
-            <label for="password">Пароль:</label>
-            <input type="password" id="password" name="password" required>
-        </div>
-        <!-- Другие поля для регистрации -->
+// Функция для отображения информации при клике на кнопку
+function showInfoOnClick() {
+    gitInfo.style.display = 'block';
+}
 
-        <button type="submit">Зарегистрироваться</button>
-    </form>
-</div>
-{% endblock %}
+// Добавляем обработчики событий
+showButton.addEventListener('click', showInfoOnClick);
+gitInfo.addEventListener('mouseover', showInfoOnHover);
+gitInfo.addEventListener('mouseout', function() {
+    gitInfo.style.display = 'none';
+});
+</script>
+</body>
+</html>

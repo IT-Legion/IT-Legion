@@ -21,9 +21,10 @@ rad.json
 #Test results file
 TestResults.xml
 #venv
-venv/
+venv/*
 .venv/*
 #__pycache__
 __pycache__/
 #DS_Store
 .DS_Store
+.idea/*
