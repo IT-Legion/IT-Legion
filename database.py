@@ -10,16 +10,17 @@ class Database:
                         id INTEGER PRIMARY KEY AUTOINCREMENT,
                         first_name TEXT NOT NULL,
                         last_name TEXT NOT NULL,
-                        age INTEGER NOT NULL,
-                        email TEXT NOT NULL
+                        dob DATE NOT NULL,
+                        email TEXT NOT NULL,
+                        phone_mobile TEXT
                     )'''
         self.conn.execute(query)
         self.conn.commit()
 
-    def insert_person(self, first_name, last_name, age, email):
-        query = '''INSERT INTO person (first_name, last_name, age, email) 
-                   VALUES (?, ?, ?, ?)'''
-        self.conn.execute(query, (first_name, last_name, age, email))
+    def insert_person(self, first_name, last_name, dob, email, phone_mobile):
+        query = '''INSERT INTO person (first_name, last_name, dob, email, phone_mobile) 
+                   VALUES (?, ?, ?, ?, ?)'''
+        self.conn.execute(query, (first_name, last_name, dob, email, phone_mobile))
         self.conn.commit()
 
     def close(self):

@@ -2,26 +2,24 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Registration Form</title>
 </head>
 <body>
-    <h2>Вход</h2>
-    {% if message %}
-        <p>{{ message }}</p>
-    {% endif %}
-    <form method="post">
-        <div class="form-group">
-            <label for="username">Логин:</label>
-            <input type="text" id="username" name="username" required>
-        </div>
-        <div class="form-group">
-            <label for="password">Пароль:</label>
-            <input type="password" id="password" name="password" required>
-
-        </div>
-        <button type="submit">Войти</button>
+    <h1>Registration Form</h1>
+    <form action="/register" method="post">
+        <label for="first_name">First Name:</label>
+        <input type="text" id="first_name" name="first_name" required><br>
+        
+        <label for="last_name">Last Name:</label>
+        <input type="text" id="last_name" name="last_name" required><br>
+        
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" required><br>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br>
+        
+        <input type="submit" value="Register">
     </form>
 </body>
 </html>

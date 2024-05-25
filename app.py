@@ -20,11 +20,12 @@ def register():
     if request.method == 'POST':
         first_name = request.form['first_name']
         last_name = request.form['last_name']
-        age = request.form['age']
+        dob = request.form['dob']
         email = request.form['email']
+        phone_mobile = request.form['phone_mobile']
         
         db = Database()
-        db.insert_person(first_name, last_name, age, email)
+        db.insert_person(first_name, last_name, dob, email, phone_mobile)
         db.close()
         
         return 'Registration Successful!'
