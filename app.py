@@ -1,6 +1,7 @@
 import json
 # Импортируем класс Flask из библиотеки Flask и необходимые функции
 from flask import Flask, render_template, jsonify, make_response, redirect, url_for, request, session 
+from database import Database
 import datetime
 
 # Создаем экземпляр веб-приложения Flask
@@ -10,6 +11,25 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = "e6a07d016fec9deab0f118b09e3f9220aae757d4"
 # Устанавливаем время жизни сессии
 app.permanent_session_lifetime = datetime.timedelta(days=1)
+
+
+
+
+@app.route('/register', methods=['GET', 'POST'])
+def register():
+    if request.method == 'POST':
+        first_name = request.form['first_name']
+        last_name = request.form['last_name']
+        age = request.form['age']
+        email = request.form['email']
+        
+        db = Database()
+        db.insert_person(first_name, last_name, age, email)
+        db.close()
+        
+        return 'Registration Successful!'
+    
+    return render_template('/register.html')
 
 
 
