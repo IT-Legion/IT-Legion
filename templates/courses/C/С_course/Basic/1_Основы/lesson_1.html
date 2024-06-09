@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT Legion</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #FFFFFF;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #202020;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        h6 {
+
+            text-align: left;
+            margin: 0;
+
+        }
+
+        nav {
+            background-color: #1a1a1a;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: #00FF00;
+            text-decoration: none;
+            padding: 10px;
+        }
+
+        nav a:hover {
+            background-color: #00FF00;
+            color: #121212;
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        article {
+            margin-bottom: 20px;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .code-block {
+            background-color: #1e1e1e;
+            border: 1px solid #333;
+            border-radius: 5px;
+            padding: 10px;
+            overflow-x: auto;
+        }
+
+        .command-block {
+            background-color: #1e1e1e;
+            border: 1px solid #333;
+            border-radius: 5px;
+            padding: 10px;
+            overflow-x: auto;
+        }
+
+        pre {
+            margin: 0;
+        }
+
+        code {
+            color: #00FF00;
+        }
+
+        #list-of-languages {
+            display: none;
+            /* начальное состояние списка - свернут */
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="title">
+            <h1>IT Legion</h1>
+            <h6>СИ: M1L1</h6>
+        </div>
+    </header>
+    <nav>
+        <a href="#GIT">Git</a>
+        <a href="#HTML">HTML</a>
+        <a href="#CSS">CSS</a>
+        <a href="#JS">JavaScript</a>
+        <a href="#Python">Python</a>
+        <a href="#PHP">PHP</a>
+        <a href="#C">C</a>
+        <a href="#CSharp">C#</a>
+        <a href="#CPlusPlus">C++</a>
+        <a href="#Arduino">Arduino</a>
+        <a href="#DB">Database</a>
+        <a href="#DS">Data Science</a>
+    </nav>
+    <section>
+        <h2>О языке: Си</h2>
+        <main>
+            <article>
+                <section class="description-section">
+                    <p>Язык <b>Cи</b> является процедурным, низкоуровневым и строго типизированный языком, был
+                        разработан на
+                        ассемблере для компьютера <a href="https://ru.wikipedia.org/wiki/PDP-11">PDP-11</a>, в
+                        1972 году <a href="https://en.wikipedia.org/wiki/Dennis_Ritchie">Деннисом Ритчи</a> в <a
+                            href="https://en.wikipedia.org/wiki/Bell_Labs">Bell Labs</a>. Он был создан для
+                        переписывания
+                        операционной системы UNIX, и с тех пор стал одним из самых популярных языков программирования в
+                        мире.</p>
+                    <p>На сегодняшний день язык считается устаревшим, так как он стал основой для многих современных
+                        языков программирования: <button id="Button-of-languages" type="button"
+                            title="Примерный список">список языков</button>
+                    <dl id="list-of-languages">
+                        <dt>Языки, непосредственно основанные на Cи</dt>
+                        <dd>
+                            <ol>
+                                <li>C++</li>
+                                <li>C#</li>
+                                <li>Objective-C</li>
+                                <li>D</li>
+                            </ol>
+                        </dd>
+                        <dt>Языки с сильным влиянием Cи</dt>
+                        <dd>
+                            <ol>
+                                <li>Python</li>
+                                <li>Java</li>
+                                <li>JavaScript</li>
+                                <li>PHP</li>
+                                <li>Perl</li>
+                                <li>Swift</li>
+                                <li>Rust</li>
+                                <li>Go (Golang)</li>
+                                <li>Ruby</li>
+                                <li>Kotlin</li>
+                                <li>Scala</li>
+                                <li>Nim</li>
+                                <li>Julia</li>
+                                <li>R</li>
+                                <li>MATLAB</li>
+                            </ol>
+                        </dd>
+                    </dl>
+                    <br>Эти языки унаследовали
+                    основные концепции Cи, но добавили свои собственные усовершенствования и абстракции, которые делают
+                    программирование более удобным и продуктивным.</p>
+                </section>
+                <section class="benefits-section">
+                    <h4>Преимущества</h4>
+
+
+                    <dl>
+                        <p>
+                            <dt>Если вы только начинаете свой путь в IT <br>приимуществом будет простота и минимализм:
+                            </dt>
+                            <dd>Си обладает относительно небольшим набором ключевых слов и конструкций, что делает его
+                                достаточно
+                                простым для изучения. В то же время, этот минимализм не ограничивает возможности языка,
+                                позволяя
+                                создавать сложные и мощные программы.</dd>
+                        </p>
+
+                        <p>
+                            <dt>Возникает вопрос:<br>Зачем учить устаревший язык программирования?</dt>
+                            <dd>
+                                Широкая область применения:<br>
+                                Не смотря на то-что многие компании при разработки новых проектов предпочтут более
+                                современныйе
+                                языки программирования на основе языка Си построенны ножество проектов которые требуют
+                                постоянной подержки.
+                            </dd>
+                        </p>
+                        <p>
+                            <dt>Гибкость и контроль:</dt>
+                            <dd>К выше сказаному стоит учесть следующие среди этого множества проектов присуствуют языки
+                                программирования что всвою очередь намикает на то-что при не обходимости высокий уровень
+                                контроля над аппаратными ресурсами, такими как память и процессор позволит собственными
+                                руками
+                                улучшить или поправить необходимую для работы библиотеку под собственные нужды.
+                            </dd>
+                        </p>
+                        <p>
+                            <dt>Высокая производительность:</dt>
+                            <dd>Не стоит забывать о последнем и немаловажном преимуществе, так как язык является
+                                низкоуровневым, за счёт прямого доступа к аппаратным ресурсам значительно повышает
+                                производительность и в этот же момент экономит ресурсы..</dd>
+                        </p>
+                    </dl>
+
+                </section>
+                <section class="disadvantages-section">
+                    <h4>Недостатки</h4>
+
+                    <dl>
+                        <p>
+                            <dt>Отсутствие автоматического управления памятью:</dt>
+                            <dd>В C программисты сами отвечают за выделение и освобождение памяти с помощью функций
+                                malloc и
+                                free. Это может привести к утечкам памяти и ошибкам использования уже освобожденной
+                                памяти.
+                            </dd>
+                        </p>
+                        <p>
+                            <dt>Безопасность типов:</dt>
+                            <dd>C не обеспечивает строгую проверку типов, что может приводить к ошибкам во время
+                                выполнения
+                                программ. Например, указатели могут быть преобразованы в другие типы без проверки.
+                            </dd>
+                        </p>
+                        <p>
+                            <dt>Отсутствие встроенной обработки исключений:</dt>
+                            <dd>C не имеет механизма обработки исключений, что усложняет управление ошибками.
+                                Программисты
+                                вынуждены использовать коды возврата для индикации ошибок.</dd>
+                        </p>
+                        <p>
+                            <dt>Низкоуровневые операции:</dt>
+                            <dd>Хотя это является преимуществом C для системного программирования, использование
+                                указателей
+                                и прямой доступ к памяти увеличивает риск ошибок, таких как переполнение буфера и
+                                неправильная адресация.</dd>
+                        </p>
+                        <p>
+                            <dt>Ограниченные возможности стандартной библиотеки:</dt>
+                            <dd>Стандартная библиотека C предоставляет только основные функции для работы с файлами,
+                                строками и математическими операциями. Для более сложных задач программистам часто
+                                приходится писать собственные функции или использовать сторонние библиотеки.</dd>
+                        </p>
+                        <p>
+                            <dt>Отсутствие поддержки объектно-ориентированного программирования (ООП):</dt>
+                            <dd>C не поддерживает ООП напрямую. Программисты, желающие использовать ООП, вынуждены либо
+                                использовать язык C++, либо имитировать ООП подходы в C, что может быть неэффективным и
+                                неудобным.</dd>
+                        </p>
+
+                        <p>
+                            <dt>Платформенная зависимость:</dt>
+                            <dd>Код, написанный на C, может быть сложно переносить между различными платформами из-за
+                                различий в архитектуре, компиляторах и операционных системах.</dd>
+                        </p>
+
+                        <p>
+                            <dt>Сложности с многопоточностью:
+
+                            </dt>
+                            <dd>C не предоставляет встроенных средств для многопоточности. Для работы с потоками
+                                программисты вынуждены использовать сторонние библиотеки, такие как POSIX threads, что
+                                добавляет сложности в разработку.</dd>
+                        </p>
+
+                        <p>
+                            <dt>Отсутствие модульности:</dt>
+                            <dd>Хотя C поддерживает разбиение программы на файлы заголовков и исходные файлы, это не
+                                обеспечивает полной модульности и инкапсуляции, как в некоторых других языках
+                                программирования.</dd>
+                        </p>
+
+                    </dl>
+
+
+                </section>
+
+
+
+
+
+
+                <ol>
+                    <li>Программа: <a href="https://www.codeblocks.org/">Code::Blocks</a></li>
+                    <li>Программа: <a href="https://visualstudio.microsoft.com/ru/vs/">Visual Studio:</a></li>
+                    <li>Онлайн редактор: <a href="https://replit.com/">replit</a></li>
+                    <li>Онлайн редактор: <a
+                            href="https://www.tutorialspoint.com/compile_c_online.php">tutorialspoint</a></li>
+                </ol>
+                <div class="code-block">
+                    <pre><code class="language-c">
+#include <stdio.h>
+    
+int main() {
+    printf("Hello, World!\n");
+    return 0;
+}
+</code></pre>
+                </div>
+
+
+            </article>
+
+        </main>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const toggleButton = document.getElementById('Button-of-languages');
+            const toggleList = document.getElementById('list-of-languages');
+
+            toggleButton.addEventListener('click', function () {
+                if (toggleList.style.display === 'none' || toggleList.style.display === '') {
+                    toggleList.style.display = 'block';
+                    toggleButton.textContent = 'Свернуть список';
+                } else {
+                    toggleList.style.display = 'none';
+                    toggleButton.textContent = 'Развернуть список';
+                }
+            });
+        });
+
+    </script>
+</body>
+
+</html>

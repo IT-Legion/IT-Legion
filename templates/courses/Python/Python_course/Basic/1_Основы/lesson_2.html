@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT Legion</title>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
+    <style>
+        body {
+            background-color: #121212;
+            color: #FFFFFF;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #202020;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        h6 {
+            
+            text-align: left;
+            margin: 0;
+           
+        }
+
+        nav {
+            background-color: #1a1a1a;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: #00FF00;
+            text-decoration: none;
+            padding: 10px;
+        }
+
+        nav a:hover {
+            background-color: #00FF00;
+            color: #121212;
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        article {
+            margin-bottom: 20px;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .code-block {
+            background-color: #1e1e1e;
+            border: 1px solid #333;
+            border-radius: 5px;
+            padding: 10px;
+            overflow-x: auto;
+        }
+
+        .command-block {
+            background-color: #1e1e1e;
+            border: 1px solid #333;
+            border-radius: 5px;
+            padding: 10px;
+            overflow-x: auto;
+        }
+
+        pre {
+            margin: 0;
+        }
+
+        code {
+            color: #00FF00;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="title">
+            <h1>IT Legion</h1>
+            <h6>Python: M1L1</h6>
+        </div>
+        
+    </header>
+    <nav>
+        <a href="#GIT">Git</a>
+        <a href="#HTML">HTML</a>
+        <a href="#CSS">CSS</a>
+        <a href="#JS">JavaScript</a>
+        <a href="#Python">Python</a>
+        <a href="#PHP">PHP</a>
+        <a href="#C">C</a>
+        <a href="#CSharp">C#</a>
+        <a href="#CPlusPlus">C++</a>
+        <a href="#Arduino">Arduino</a>
+        <a href="#DB">Database</a>
+        <a href="#DS">Data Science</a>
+    </nav>
+    <section>
+        <h2>Традиция: Привет мир!</h2>
+        <main>
+            <article>
+                <p>Традиционно изучение любого языка программирования начинается с приветствия.<br>Давайте посмотрим,
+                    как
+                    это делается на Python.</p>
+
+                <p>Для начала убедимся в том, что питон установлен.<br>Открайте терминал и введите следующую команду:
+                <div class="command-block">
+                    <pre><code>python3 --version</code></pre>
+                </div><br>
+                Если Python не установлен или команда не распознана, вы получите примерно такое сообщение:
+                <div class="command-block">
+                    <pre><code>command not found: python</code></pre>
+                </div><br>В этом случае, нужно зайти на
+                <a href="https://www.python.org/" title="Перейти на www.python.org" target="_blank">официальный
+                    сайт</a> и скачать дестрибудив в соответсвии с вашей
+                операционной системой.<br>Как правило установка дестрибудива не является сложной задачей темнемение
+                лучше чтоб она была краткая: <a href="#" target="_blank">видео инструкция.</a>
+                </p>
+                <p>Зеверщающим этапом этого урока осталось попрактиковатся в написании программ.<br>Для этого в
+                    терминале активируте интерпретатор языка программирования Python.<br>Введите в терменале:
+                <div class="command-block">
+                    <pre><code>python3</code></pre>
+                </div>
+                Консоль переходит в интерактивный режим (REPL - Read-Eval-Print Loop), где можно вводить Python-код,
+                который сразу будет исполняться. Вы увидите приглашение ввода, обычно это >>>.
+                </p>
+                <p>
+                    <h3>Познакомимся с первой функцией.</h3>
+                    Введите:
+                <div class="code-block">
+                    <pre><code class="language-python">print("Hello, World!")</code></pre>
+                </div>
+                В консоль вернётся:<br>#Hello, World!<br>
+                </p>
+                <p> Функция print() в Python используется для вывода данных на стандартный вывод, который обычно
+                    представляет собой экран консоли или терминала.</p>
+
+                <p>
+                <h3>Синтаксис</h3>
+                <div class="code-block">
+                    <pre><code class="language-python">print(<span>*objects</span>, sep=' ', end='\n', file=sys.stdout, flush=False)
+                        </code></pre>
+                </div><br>
+                <h4>Аргументы</h4>
+                <ul>
+                    <li><code>*objects</code>: Один или несколько объектов, которые нужно вывести. Объекты могут быть
+                        различного типа: строки, числа, списки и т.д. Все они будут преобразованы в строки с помощью
+                        функции <code>str</code> и выведены.</li>
+                    <li><code>sep</code> (по умолчанию <code>' '</code>): Строка-разделитель, которая вставляется между
+                        объектами. По умолчанию это пробел.</li>
+                    <li><code>end</code> (по умолчанию <code>'\n'</code>): Строка, которая добавляется в конец вывода.
+                        По умолчанию это символ новой строки.</li>
+                    <li><code>file</code> (по умолчанию <code>sys.stdout</code>): Объект файлового типа, в который будет
+                        производиться вывод. По умолчанию это стандартный вывод (консоль).</li>
+                    <li><code>flush</code> (по умолчанию <code>False</code>): Булевый флаг, определяющий, нужно ли
+                        принудительно сбросить (очистить) буфер вывода. Полезно для вывода данных в реальном времени.
+                    </li>
+
+                </ul>
+                </p>
+
+            </article>
+        </main>
+    </section>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</body>
+
+</html>
